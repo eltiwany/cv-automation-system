@@ -32,3 +32,14 @@ To make it easier for a person to generate and customize curriculum vitae accord
 
 ### PROJECT SCOPE:
 The proposed system will enables graduates, unemployed or any person who wish to create or improve their current CV to easily fill their information and download a professional and recognized CV’s based on their job applications. 
+
+### TASKS
+* Identifying requirerments
+* Designing of database entity relationship diagrams
+* Designing of use case diagrams
+* Designing of business logic MVC 
+* Desinging of UI (User interface)
+* Normalization
+* Implemantation and coding
+* Testing 
+* Deployment
