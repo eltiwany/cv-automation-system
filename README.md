@@ -43,3 +43,4 @@ The proposed system will enables graduates, unemployed or any person who wish to
 * Implemantation and coding
 * Testing 
 * Deployment
+* Marketing
