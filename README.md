@@ -10,7 +10,6 @@ SN | NAME |	REG NO |	COURSE
 4 |	RWEBUGISA, IAN M |	2018-04-06823 |	BSCS
 5 |	MOYO, JONATHAN JOHN |	2018-04-02512 |	BSCEIT
 6 |	SALEMA, EDWIN EDWARD |	2018-04-06807 |	BSCS
-7 |	NASSON, JOFREY |	2018-04-02457 |	BSCS
 
 ### INTRODUCTION:
 CAS is a system that enables the graduates or any person requires to apply for a job application to easily generate and customize curriculum vitae according to organization standards to provides a summary of persons experience, academic background including teaching experience, degrees, research, awards, publications, presentations, and other achievements, skills and credentials.
