@@ -15,6 +15,9 @@ class CreateProjectAndResearchesTable extends Migration
     {
         Schema::create('project_and__researches', function (Blueprint $table) {
             $table->increments('id');
+            $table->String('name');
+            $table->String('TimeStarted');
+            $table->String('TimeEnded');
             $table->timestamps();
         });
     }
