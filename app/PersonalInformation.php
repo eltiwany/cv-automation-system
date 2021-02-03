@@ -30,7 +30,11 @@ public function ProjectandResearch()
 
     }
 
+    public function EducationBackGround()
+    {
+        return $this->hasMany('app\EducationBackGround');
 
+    }
 
 
 }
