@@ -15,7 +15,10 @@ public function Language()
 {
     return $this->hasMany('app\Language');
 }
-
+    public function Referees()
+    {
+        return $this->hasMany('app\Referees');
+    }
 
 
 
