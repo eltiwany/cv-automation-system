@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-use app\Language;
+
 use Illuminate\Database\Eloquent\Model;
 
 class PersonalInformation extends Model
@@ -19,6 +19,17 @@ public function Language()
     {
         return $this->hasMany('app\Referees');
     }
+public function ProjectandResearch()
+{
+    return $this->hasMany('app\project_and_Research');
+
+}
+    public function Hobbies()
+    {
+        return $this->hasMany('app\Hobbies');
+
+    }
+
 
 
 
