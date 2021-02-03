@@ -36,5 +36,10 @@ public function ProjectandResearch()
 
     }
 
+    public function WorkExperience()
+    {
+        return $this->hasMany('app\WorkExperience ');
+
+    }
 
 }
