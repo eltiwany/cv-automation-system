@@ -19,6 +19,7 @@ class CreateWorkExperiencesTable extends Migration
             $table->String('TimeStarted');
             $table->String('TimeEnded');
             $table->String('Description');
+            $table->unsignedBigInteger('personalinfo_id');
             $table->timestamps();
         });
     }
