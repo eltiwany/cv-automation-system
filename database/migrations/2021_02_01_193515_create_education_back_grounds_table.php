@@ -20,6 +20,7 @@ class CreateEducationBackGroundsTable extends Migration
             $table->String('TimeStarted');
             $table->String('TimeEnded');
             $table->String('Type');
+            $table->unsignedBigInteger('personalinfo_id');
             $table->timestamps();
         });
     }
