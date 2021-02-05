@@ -9,4 +9,11 @@ class Project_and_Research extends Model
     protected $table ='project_and__researches';
     public $primaryKey='id';
     public $timestamps ='true';
+
+
+    public function personalInfomation (){
+
+        return $this->belongsTo('App\PersonalInformation');
+    }
+
 }
