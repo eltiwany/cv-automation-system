@@ -18,7 +18,7 @@ class CreateProjectAndResearchesTable extends Migration
             $table->String('name');
             $table->String('TimeStarted');
             $table->String('TimeEnded');
-            $table->String('TimeEnded');
+
             $table->unsignedBigInteger('personalinfo_id');
             $table->timestamps();
         });
