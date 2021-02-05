@@ -19,6 +19,7 @@ class CreateRefereesTable extends Migration
             $table->String('Second_Name');
             $table->String('Email');
             $table->String('Phone_Number');
+            $table->unsignedBigInteger('personalinfo_id');
 
             $table->timestamps();
         });
