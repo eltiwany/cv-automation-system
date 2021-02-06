@@ -13,13 +13,11 @@ class CreateProjectAndResearchesTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_and__researches', function (Blueprint $table) {
+        Schema::create('project_and_researches', function (Blueprint $table) {
             $table->increments('id');
             $table->String('name');
             $table->String('TimeStarted');
             $table->String('TimeEnded');
-
-            $table->unsignedBigInteger('personalinfo_id');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateProjectAndResearchesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_and__researches');
+        Schema::dropIfExists('project_and_researches');
     }
 }
