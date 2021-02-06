@@ -31,25 +31,46 @@
           <div class="sidebar-submenu">
             <ul>
               <li>
-                <a href="/personal-information">Personal Information</a>
+                <a href="/personal-information">
+                  <i class="fa fa-users"></i>
+                  <span>Personal Information</span>
+                </a>
               </li>
               <li>
-                <a href="/educational-background">Educational Background</a>
+                <a href="/educational-background">
+                  <i class="fa fa-graduation-cap"></i>
+                  <span>Educational Background</span>
+                </a>
               </li>
               <li>
-                <a href="/language">Language</a>
+                <a href="/language">
+                  <i class="fa fa-globe"></i>
+                  <span>Languages</span>
+                </a>
               </li>
               <li>
-                <a href="/hobbies">Hobbies</a>
+                <a href="/hobbies">
+                  <i class="fa fa-smile-o"></i>
+                  <span>Hobbies</span>
+                </a>
               </li>
               <li>
-                <a href="/project-research">Project/Research</a>
+                <a href="/project-research">
+                  <i class="fa fa-rocket"></i>
+                  <span>Project/Research</span>
+                </a>
               </li>
               <li>
-                <a href="work-experince">Work Experience</a>
+                <a href="work-experince">
+                  <i class="fa fa-suitcase"></i>
+                  <span>Work Experience</span>
+                </a>
               </li>
               <li>
-                <a href="referees">Referees</a>
+                <a href="referees">
+                  <i class="fa fa-gavel"></i>
+                  <span>Referees</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -87,19 +108,19 @@
               <li>
                 <a href="/download-print">
                   <i class="fa fa-file-word-o"></i>
-                  <span>Word</span>
+                  <span>Download as Word</span>
                 </a>
               </li>
               <li>
                 <a href="download-print">
                   <i class="fa fa-file-pdf-o"></i>
-                  <span>PDF</span>
+                  <span>Download as PDF</span>
                 </a>
               </li>
               <li>
                 <a href="download-print">
                   <i class="fa fa-print"></i>
-                  <span>Print Template</span>
+                  <span>Print CV</span>
                 </a>
               </li>
               
