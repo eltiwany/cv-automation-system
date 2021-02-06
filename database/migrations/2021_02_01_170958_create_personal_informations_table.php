@@ -24,8 +24,6 @@ class CreatePersonalInformationsTable extends Migration
             $table->String('Address');
             $table->String('Martial_Status');
             $table->String('Gender');
-
-
             $table->timestamps();
         });
     }
