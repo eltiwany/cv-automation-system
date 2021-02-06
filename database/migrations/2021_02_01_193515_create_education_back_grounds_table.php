@@ -13,13 +13,13 @@ class CreateEducationBackGroundsTable extends Migration
      */
     public function up()
     {
-        Schema::create('education_back_grounds', function (Blueprint $table) {
+        Schema::create('educationbackgrounds', function (Blueprint $table) {
             $table->increments('id');
             $table->String('name');
             $table->String('type');
             $table->String('TimeStarted');
             $table->String('TimeEnded');
-            $table->String('Type');
+
             $table->unsignedBigInteger('personalinfo_id');
             $table->timestamps();
         });
