@@ -11,9 +11,8 @@ class EducationBackGround extends Model
     public $timestamps ='true';
 
 
-    public function personalInfomation (){
-
-        return $this->belongsTo('App\PersonalInformation');
+    public function user (){
+        return $this->belongsTo('App\User');
     }
 
 }
