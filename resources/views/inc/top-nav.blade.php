@@ -1,15 +1,15 @@
 
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container top-left top-right">
-            @if (!auth()->guest())    
+            {{-- @if (!auth()->guest())    
                 <div class="sidebar-brand pr-3">
                     <a href="#"></a>
                     <div id="close-sidebar">
-                        <i class="fa fa-times"></i>
+                        <i class="fa fa-arrow-left"></i>
                     </div>
                 </div>
-            @endif
-            <a class="navbar-brand" href="{{ url('/') }}">
+            @endif --}}
+            <a class="navbar-brand pl-3" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
