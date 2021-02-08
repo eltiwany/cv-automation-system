@@ -4,16 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Project_and_Research extends Model
+class ProjectAndResearch extends Model
 {
-    protected $table ='project_and__researches';
+    protected $table ='project_and_researches';
     public $primaryKey='id';
     public $timestamps ='true';
 
-
-    public function personalInfomation (){
-
-        return $this->belongsTo('App\PersonalInformation');
+    public function user() {
+        return $this->belongsTo('App\User');
     }
 
 }
