@@ -24,30 +24,30 @@
 
 </head>
 <body>
+    {{-- top navigation --}}
     @include('inc.top-nav')    
     @if (!auth()->guest())
-    <div id="app">
-        <div class="page-wrapper chiller-theme toggled">
-            <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
-                <i class="fa fa-bars"></i>
-            </a>
-            @include('inc.side-nav')
-            <!-- sidebar-wrapper  -->
-            <main class="page-content">
-                <div class="container-fluid">
-                    {{-- main content here --}}
-                    @endif
-                    
-                    @yield('content')
-
-                        @if (!auth()->guest())  
-                                @include('inc.footer')
-                                </div>
-                            </main>
-                        @endif
-        <!-- page-content" -->
+        <div id="app">
+            <div class="page-wrapper chiller-theme toggled">
+                <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+                <!-- sidebar-wrapper  -->
+                @include('inc.side-nav')
+                <main class="page-content">
+                    <div class="container-fluid body-custom">
+                        @yield('content')           
+                    </div>
+                </main>
+            </div>
         </div>
-    </div>
+    @else
+        <main class="m-4 body-custom">
+            @yield('content')           
+        </main>
+    @endif
+    {{-- footer --}}
+    @include('inc.footer')
     <!-- page-wrapper -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
