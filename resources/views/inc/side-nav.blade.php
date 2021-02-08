@@ -13,23 +13,48 @@
             
     <div class="sidebar-header">
       <div class="user-pic">
-        <form action="/upload-image" method="POST" enctype="multipart/form-data">
+        <form id="form" action="/upload-image" method="POST" enctype="multipart/form-data">
           {{ csrf_field() }}
-          <label for="image_url"><i class="fa fa-user text-dark user-large"></i></label>
-          <input onchange="this.form.submit('/upload-image')" type="file" hidden id="image_url" name="image_url">
+          @if (empty(auth()->user()->logo_url))
+            <i class="fa fa-user text-dark user-large"></i>
+          @else
+            <img src="storage/profile_images/{{ auth()->user()->logo_url }}">  
+          @endif
+          <input onchange="this.form.submit('/upload-image')" type="file" hidden id="image" name="image">
         </form>
       </div>
       <div class="user-info">
-        <span class="user-name">
+        <span class="user-name pb-2">
           {{
             auth()->user()->first_name . " " .
             auth()->user()->middle_name . " " .
             auth()->user()->last_name
           }}
         </span>
-        <span class="user-role">User</span>
+        @if (!empty(auth()->user()->logo_url))
+          <label for="image" class="btn btn-sm btn-primary image-btn">
+            <i class="fa fa-upload"></i> Change Image
+          </label>
+          <br/>
+          <label onclick="confirmDeletion()" class="btn btn-sm btn-danger image-btn">
+            <i class="fa fa-trash"></i> Remove Image
+          </label>        
+        @else
+          <label for="image" class="btn btn-sm btn-primary image-btn">
+            <i class="fa fa-upload"></i> Upload Image
+          </label>
+        @endif
       </div>
     </div>
+
+    <script>
+      function confirmDeletion() {
+        var confirmed = confirm('Are you sure you what to remove this image?');
+        if (confirmed) {
+          document.getElementById('form').submit();
+        }
+      }
+    </script>
 
     <div class="sidebar-menu">
       <ul>
