@@ -1,13 +1,8 @@
 .user-large {
     font-size: 18pt !important;
-    padding: 10px 15px 10px 15px;
+    padding: 13px 17px 13px 17px;
     border-radius: 5px;
     background: white;
-}
-
-.user-large:hover {
-    background-color: azure;
-    cursor: pointer;
 }
 
 .sidebar-submenu ul li, .sidebar-submenu ul li a {
