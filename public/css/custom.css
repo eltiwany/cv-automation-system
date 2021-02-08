@@ -5,6 +5,11 @@
     background: white;
 }
 
+.user-large:hover {
+    background-color: azure;
+    cursor: pointer;
+}
+
 .sidebar-submenu ul li, .sidebar-submenu ul li a {
     text-decoration: none !important;
     list-style: none !important;
