@@ -13,7 +13,11 @@
             
     <div class="sidebar-header">
       <div class="user-pic">
-        <i class="fa fa-user text-dark user-large"></i>
+        <form action="/upload-image" method="POST" enctype="multipart/form-data">
+          {{ csrf_field() }}
+          <label for="image_url"><i class="fa fa-user text-dark user-large"></i></label>
+          <input onchange="this.form.submit('/upload-image')" type="file" hidden id="image_url" name="image_url">
+        </form>
       </div>
       <div class="user-info">
         <span class="user-name">
@@ -26,6 +30,7 @@
         <span class="user-role">User</span>
       </div>
     </div>
+
     <div class="sidebar-menu">
       <ul>
         <li class="header-menu">
