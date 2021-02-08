@@ -20,4 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/personal-information' ,'PersonalInformationsController');
 Route::resource('/educational-background' ,'EducationalBackgroundsController');
-Route::post('/upload-image', 'PersonalInformationsController@uploadImage');
+Route::post('/upload-image', 'PersonalInformationsController@upload_image');
