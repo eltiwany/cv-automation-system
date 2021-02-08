@@ -3,7 +3,7 @@
       @if (!auth()->guest())    
         <div class="sidebar-brand pr-3">
             <a href="{{ url('/') }}">
-              {{ config('app.name', 'Laravel') }}
+              CV Automation System
             </a>
             <div id="close-sidebar">
                 <i class="fa fa-arrow-left"></i>
