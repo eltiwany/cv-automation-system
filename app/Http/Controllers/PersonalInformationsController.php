@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
+use App\User;
+use Illuminate\Support\Facades\Storage;
 
 class PersonalInformationsController extends Controller
 {
@@ -80,5 +83,35 @@ class PersonalInformationsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /** 
+    * Upload/Update user profile
+    * @param Request $request
+    * @return \Illuminate\Http\Responce 
+    */
+    public function upload_image(Request $request) {
+
+        $this->validate($request, [
+            'image' => 'image|nullable|max:1999'
+        ]);
+
+        $image = 'null';
+
+        if ($request->hasFile('image')) {
+            $fileNameWithExt = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $image = $filename . '_' . time() . '.' . $extension;
+            $path = $request->file('image')->storeAs('public/profile_images', $image);
+        }
+
+        $user = User::find(auth()->user()->id);
+        if (!empty($user->logo_url))
+            unlink(public_path('storage/profile_images/' . $user->logo_url));
+        $user->logo_url = $image == 'null' ? '' : $image;
+        $user->save();
+
+        return redirect()->route('home')->with('success', 'Profile Image Updated.');
     }
 }

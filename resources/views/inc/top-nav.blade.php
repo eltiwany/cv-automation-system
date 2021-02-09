@@ -1,16 +1,16 @@
 
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container top-left top-right">
-            @if (!auth()->guest())    
+            {{-- @if (!auth()->guest())    
                 <div class="sidebar-brand pr-3">
                     <a href="#"></a>
                     <div id="close-sidebar">
-                        <i class="fa fa-times"></i>
+                        <i class="fa fa-arrow-left"></i>
                     </div>
                 </div>
-            @endif
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+            @endif --}}
+            <a class="navbar-brand pl-3" href="{{ url('/') }}">
+                CV Automation System
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
