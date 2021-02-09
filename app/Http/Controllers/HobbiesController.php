@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Hobbies;
 
 class HobbiesController extends Controller
 {
@@ -25,6 +26,8 @@ class HobbiesController extends Controller
     {
         //
     }
+
+    
 
     /**
      * Store a newly created resource in storage.
