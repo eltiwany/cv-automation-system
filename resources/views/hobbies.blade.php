@@ -14,7 +14,7 @@
                         </div>
                     @endif
                    <form action="" method="POST" >
-
+                    @csrf
                       <label for="firsthobbie"> First Hobbie </label>
                       &nbsp &nbsp &nbsp<input type="text" id="firsthobbie" name="firsthobbie">
                       <br>
