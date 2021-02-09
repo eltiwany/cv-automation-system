@@ -16,16 +16,16 @@
                    <form action="" method="POST" >
                     @csrf
                       <label for="firsthobbie"> First Hobbie </label>
-                      &nbsp &nbsp &nbsp<input type="text" id="firsthobbie" name="firsthobbie">
+                      &nbsp &nbsp &nbsp<input type="text" id="firsthobby" name="firsthobby">
                       <br>
                       <label for="secondhobbie"> Second Hobbie </label>
-                      <input type="text" id="sechobbie" name="sechobbie">
+                      <input type="text" id="sechobby" name="sechobby">
                       <br>
                       <label for="thirdhobbie"> Third Hobbie </label>
-                      &nbsp&nbsp&nbsp<input type="text" id="thirdhobbie" name="thirdhobbie">
+                      &nbsp&nbsp&nbsp<input type="text" id="thirdhobby" name="thirdhobby">
                       <br>
                       <label for="fourthhobbie"> Fourth Hobbie </label>
-                      &nbsp&nbsp<input type="text" id="fourthhobbie" name="fourthhobbie">
+                      &nbsp&nbsp<input type="text" id="fourthhobby" name="fourthhobby">
                       <br>
                       <input type="submit" value="Submit">
 
