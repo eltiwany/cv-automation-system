@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Hobbies;
+use App\Hobby;
 
 class HobbiesController extends Controller
 {
@@ -37,7 +37,7 @@ class HobbiesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $hobbies = new Hobbies
     }
 
     /**
