@@ -35,7 +35,7 @@ class ProjectandResearchsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pr= new ProjectAndResearch;
     }
 
     /**
