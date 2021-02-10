@@ -23,6 +23,10 @@ Route::get('/project-research', function () {
     return view('projectandresearch');
 });
 
+Route::get('/work-experince', function () {
+    return view('workexperience');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
