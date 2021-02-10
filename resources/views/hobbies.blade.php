@@ -15,10 +15,10 @@
                     @endif
                    <form action="" method="POST" >
                     @csrf
-                      <label for="firsthobbie"> First Hobbie </label>
-                      &nbsp &nbsp &nbsp<input type="text" id="firsthobby" name="firsthobby">
+                      <label for="firsthobbie"> List your Hobbies </label>
+                      &nbsp &nbsp &nbsp<input type="textbox" id="firsthobby" name="firsthobby">
                       <br>
-                      <label for="secondhobbie"> Second Hobbie </label>
+                      <!--<label for="secondhobbie"> Second Hobbie </label>
                       <input type="text" id="sechobby" name="sechobby">
                       <br>
                       <label for="thirdhobbie"> Third Hobbie </label>
@@ -26,6 +26,7 @@
                       <br>
                       <label for="fourthhobbie"> Fourth Hobbie </label>
                       &nbsp&nbsp<input type="text" id="fourthhobby" name="fourthhobby">
+                      -->
                       <br>
                       <input type="submit" value="Submit">
 
