@@ -28,6 +28,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/personal-information' ,'PersonalInformationsController');
 Route::resource('/educational-background' ,'EducationalBackgroundsController');
-Route::post('/hobbies', "ProjectandResearchsController@store");
+Route::post('/project-research', "ProjectandResearchsController@store");
 Route::post('/hobbies', "HobbiesController@store");
 Route::post('/upload-image', 'PersonalInformationsController@upload_image');
