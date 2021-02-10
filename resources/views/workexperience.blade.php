@@ -15,7 +15,7 @@
                     @endif
                    <form action="" method="POST" >
                     @csrf
-                    <label for="workname"> Project Title/Name </label>
+                    <label for="workname"> Work Title/Name </label>
                       &nbsp <input type="textbox" id="workname"  name="workname">
                       <br>
                       <label for="timestarted"> Time Started </label>
@@ -25,7 +25,7 @@
                       &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<input type="text" id="timeended" name="timeended">
                       <br>
                       <br>
-                      <label for="workdescription"> Time Ended </label>
+                      <label for="workdescription"> Description </label>
                       &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<input type="text" id="workdescription" name="workdescription">
                       <br>
                       
