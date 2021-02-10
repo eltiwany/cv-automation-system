@@ -35,12 +35,13 @@ class WorkExperiencesContoller extends Controller
      */
     public function store(Request $request)
     {
-        $pr= new ProjectAndResearch;
-        $pr->name= $request->projectname;
-        $pr->TimeStarted= $request->timestarted;
-        $pr->TimeEnded= $request->timeended;
-        $pr->user_id = auth()->user()->id;
-        $pr->save(); 
+        $workex= new ProjectAndResearch;
+        $workex->name= $request->projectname;
+        $workex->TimeStarted= $request->timestarted;
+        $workex->TimeEnded= $request->timeended;
+        $workex->Description= $request->workdescription;
+        $workex->user_id = auth()->user()->id;
+        $workex->save(); 
     }
 
     /**
