@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Hobbies;
+use Illuminate\Database\Eloquent\Model;
 
 class HobbiesController extends Controller
 {
@@ -26,6 +28,8 @@ class HobbiesController extends Controller
         //
     }
 
+    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -34,7 +38,19 @@ class HobbiesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*$hobby = new Model();
+
+        $hobby->name = request('firsthobby');
+        $hobby->name = request('sechobby');
+
+        $hobby->save(); 
+        */
+
+       // print_r($request->input());
+        $hobby = new Hobbies;
+        $hobby->name= $request->firsthobby;
+        $hobby->save(); 
+        
     }
 
     /**

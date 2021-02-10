@@ -1,6 +1,6 @@
 .user-large {
     font-size: 18pt !important;
-    padding: 10px 15px 10px 15px;
+    padding: 13px 17px 13px 17px;
     border-radius: 5px;
     background: white;
 }
@@ -20,8 +20,7 @@
 }
 
 .sidebar-brand {
-    margin-left: -15px !important;  
-    cursor: pointer;
+    padding-bottom: 12px !important;
 }
 
 @media (min-width: 992px) {
@@ -39,10 +38,27 @@ footer {
     -webkit-box-shadow: 0 -4px 4px rgb(0 0 0 / 4%);
     box-shadow: 0 -4px 4px rgb(0 0 0 / 4%);
     padding: 10px;
-    z-index: 1000;
 }
 
 footer a {
     color: black;
     text-decoration: underline;
+}
+
+.navbar-laravel {
+    position: fixed;
+    width: 100%;
+    top: 0 !important;
+}
+
+.body-custom {
+    margin-top: 65px !important;
+}
+
+#show-sidebar {
+    height: 55px !important;
+    margin-top: -10px !important;
+    padding-top: 10px !important;
+    font-size: 20px !important;
+    border-radius: 0 !important;
 }
