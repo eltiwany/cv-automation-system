@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Fill in your Hobbies in here....</div>
+                <div class="card-header">List your Projects here. This includes completed and ongoing</div>
 
                 <div class="card-body">
                 @if (session('status'))
@@ -15,17 +15,20 @@
                     @endif
                    <form action="" method="POST" >
                     @csrf
-                      <label for="firsthobbie"> List your Hobbies </label>
-                      &nbsp &nbsp &nbsp<input type="textbox" id="firsthobby" size="50" name="firsthobby">
+                    <label for="workname"> Project Title/Name </label>
+                      &nbsp <input type="textbox" id="workname"  name="workname">
                       <br>
-                      <label for="secondhobbie"> Second Hobbie </label>
-                      <input type="text" id="sechobby" name="sechobby">
+                      <label for="timestarted"> Time Started </label>
+                      &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp<input type="text" id="timestarted" name="timestarted">
                       <br>
-                      <label for="thirdhobbie"> Third Hobbie </label>
-                      &nbsp&nbsp&nbsp<input type="text" id="thirdhobby" name="thirdhobby">
+                      <label for="timeended"> Time Ended </label>
+                      &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<input type="text" id="timeended" name="timeended">
                       <br>
-                      <label for="fourthhobbie"> Fourth Hobbie </label>
-                      &nbsp&nbsp<input type="text" id="fourthhobby" name="fourthhobby">
+                      <br>
+                      <label for="workdescription"> Time Ended </label>
+                      &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<input type="text" id="workdescription" name="workdescription">
+                      <br>
+                      
                       
                       <br>
                       <input type="submit" style="background-color:green" value="Submit">
