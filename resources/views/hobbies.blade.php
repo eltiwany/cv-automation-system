@@ -16,7 +16,7 @@
                    <form action="" method="POST" >
                     @csrf
                       <label for="firsthobbie"> List your Hobbies </label>
-                      &nbsp &nbsp &nbsp<input type="textbox" id="firsthobby"  name="firsthobby">
+                      &nbsp &nbsp &nbsp<input type="textbox" id="firsthobby" size="50" name="firsthobby">
                       <br>
                       <!--<label for="secondhobbie"> Second Hobbie </label>
                       <input type="text" id="sechobby" name="sechobby">
