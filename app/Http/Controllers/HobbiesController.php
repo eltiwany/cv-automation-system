@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Hobbies;
+use App\Hobby;
 use Illuminate\Database\Eloquent\Model;
 
 class HobbiesController extends Controller
