@@ -15,7 +15,19 @@
                     @endif
                    <form action="" method="POST" >
                     @csrf
+                    <label for="projectname"> List your Hobbies </label>
+                      &nbsp &nbsp &nbsp<input type="textbox" id="projectname" size="50" name="projectname">
+                      <br>
+                      <label for="timestarted"> Second Hobbie </label>
+                      <input type="text" id="timestarted" name="timestarted">
+                      <br>
+                      <label for="timeended"> Third Hobbie </label>
+                      &nbsp&nbsp&nbsp<input type="text" id="timeended" name="timeended">
+                      <br>
                       
+                      
+                      <br>
+                      <input type="submit" style="background-color:green" value="Submit">
 
                       
                     
