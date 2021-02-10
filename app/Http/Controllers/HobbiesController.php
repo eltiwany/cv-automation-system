@@ -47,7 +47,7 @@ class HobbiesController extends Controller
         */
 
        // print_r($request->input());
-        $hobby = new Hobbies;
+        $hobby = new Hobby;
         $hobby->name= $request->firsthobby;
         $hobby->save(); 
         
