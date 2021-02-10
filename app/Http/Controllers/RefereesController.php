@@ -34,7 +34,8 @@ class RefereesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ref= new Referee;
+         
     }
 
     /**
