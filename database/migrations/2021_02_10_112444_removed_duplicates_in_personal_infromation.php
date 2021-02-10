@@ -30,6 +30,9 @@ class RemovedDuplicatesInPersonalInfromation extends Migration
     public function down()
     {
         Schema::table('personal_informations', function (Blueprint $table) {
+            $table->String('First_Name');
+            $table->String('Middle_Name');
+            $table->String('Sur_Name');
 
         });
     }
