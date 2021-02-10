@@ -15,7 +15,7 @@ class CreatePersonalInformationsTable extends Migration
     {
         Schema::create('personal_informations', function (Blueprint $table) {
             $table->increments('id');
-
+            $table->String('First_Name');
             $table->String('Middle_Name');
             $table->String('Sur_Name');
             $table->String('Email');
