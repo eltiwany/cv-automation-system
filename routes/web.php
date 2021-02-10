@@ -27,6 +27,10 @@ Route::get('/work-experince', function () {
     return view('workexperience');
 });
 
+Route::get('/referees', function () {
+    return view('referees');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
