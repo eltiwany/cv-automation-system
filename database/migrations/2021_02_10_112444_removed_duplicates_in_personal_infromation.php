@@ -15,6 +15,8 @@ class RemovedDuplicatesInPersonalInfromation extends Migration
     {
         Schema::table('personal_infromations', function (Blueprint $table) {
             $table->dropColumn('First_Name');
+            $table->dropColumn('Middle_Name');
+            $table->dropColumn('Sur_Name');
 
 
         });
