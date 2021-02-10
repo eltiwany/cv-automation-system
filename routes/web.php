@@ -34,4 +34,5 @@ Route::resource('/personal-information' ,'PersonalInformationsController');
 Route::resource('/educational-background' ,'EducationalBackgroundsController');
 Route::post('/project-research', "ProjectandResearchsController@store");
 Route::post('/hobbies', "HobbiesController@store");
+Route::post('/work-experince', "WorkExperienceController@store");
 Route::post('/upload-image', 'PersonalInformationsController@upload_image');
