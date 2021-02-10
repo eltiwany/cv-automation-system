@@ -35,6 +35,12 @@ class RefereesController extends Controller
     public function store(Request $request)
     {
         $ref= new Referee;
+        $ref->First_Name= $request->firstname;
+        $ref->Second_Name= $request->secondname;
+        $ref->Email= $request->email;
+        $ref->Phone_Number= $request->phone;
+        $ref->user_id = auth()->user()->id;
+        $ref->save(); 
          
     }
 
