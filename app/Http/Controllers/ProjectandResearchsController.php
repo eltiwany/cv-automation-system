@@ -36,6 +36,9 @@ class ProjectandResearchsController extends Controller
     public function store(Request $request)
     {
         $pr= new ProjectAndResearch;
+        $pr->name= $request->projectname;
+        $pr->TimeStarted= $request->timestarted;
+        $pr->TimeEnded= $request->timeended;
     }
 
     /**
