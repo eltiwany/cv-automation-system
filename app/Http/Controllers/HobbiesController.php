@@ -13,6 +13,8 @@ class HobbiesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    
     public function index()
     {
         //
@@ -47,8 +49,14 @@ class HobbiesController extends Controller
         */
 
        // print_r($request->input());
-        $hobby = new Hobby;
+        if (Hobby::where('user_id', auth()->user()->id)->exists())
+            $hobby = Hobby::find(auth()->user()->id);
+        else
+            $hobby = new Hobby; 
+
         $hobby->name= $request->firsthobby;
+       
+        $hobby->user_id = auth()->user()->id;
         $hobby->save(); 
         
     }
