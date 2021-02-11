@@ -36,9 +36,12 @@
                 @include('inc.side-nav')
                 <main class="page-content">
                     <div class="container-fluid body-custom">
-                        @if (isset($success))
+                        @isset($success)
                             <div class="alert alert-success">{{ $success }}</div>
-                        @endif
+                        @endisset
+                        @isset($error)
+                            <div class="alert alert-success">{{ $success }}</div>
+                        @endisset
                         @yield('content')           
                     </div>
                 </main>
