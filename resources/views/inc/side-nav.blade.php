@@ -2,7 +2,7 @@
   <div class="sidebar-content">
       @if (!auth()->guest())    
         <div class="sidebar-brand pr-3">
-            <a href="{{ url('/') }}">
+            <a href="{{ url('/home') }}">
               CV Automation System
             </a>
             <div id="close-sidebar">
