@@ -9,7 +9,7 @@
                     </div>
                 </div>
             @endif --}}
-            <a class="navbar-brand pl-3" href="{{ url('/') }}">
+            <a class="navbar-brand pl-3" href="{{ url('/home') }}">
                 CV Automation System
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
