@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Referee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class RefereesController extends Controller
 {
@@ -12,6 +13,10 @@ class RefereesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $referees = Referee::where('user_id', auth()->user()->id)->paginate(10);
@@ -25,7 +30,7 @@ class RefereesController extends Controller
      */
     public function create()
     {
-        //
+        return view('user-information.referees.create');
     }
 
     /**
@@ -36,7 +41,25 @@ class RefereesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'first_name' => 'required',
+            'second_name' => 'required',
+            'phone_number' => 'required|min:12',
+            'email' => 'required|email',
+        ], [
+            'phone_number.min' => 'Phone number must be exactly 12 charachers format 255777111222'
+        ]);
+        $validator->validate();
+        
+        $referees = new Referee;
+        $referees->First_Name = $request->get('first_name');
+        $referees->Second_Name = $request->get('second_name');
+        $referees->Phone_Number = $request->get('phone_number');
+        $referees->Email = $request->get('email');
+        $referees->user_id = auth()->user()->id;
+        $referees->save();
+
+        return redirect()->route('referees.index')->with('success', 'Referee has been added!');
     }
 
     /**
@@ -81,6 +104,6 @@ class RefereesController extends Controller
      */
     public function destroy($id)
     {
-        return "you are in destroy view";
+       //
     }
 }
