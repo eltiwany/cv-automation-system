@@ -8,7 +8,7 @@
                 <div class="card-header h4 alert-default">
                     Referees
                     <a href="/referees/create" class="btn btn-primary btn-sm float-right">
-                        <i class="fa fa-plus"> Add Referee</i>
+                        <i class="fa fa-plus-square"></i> Add Referee
                     </a>
                 </div>
                 <div class="card-body">
@@ -27,7 +27,7 @@
                                     <td>{{ $referee->First_Name }}</td>
                                     <td>{{ $referee->Second_Name }}</td>
                                     <td>{{ $referee->Email }}</td>
-                                    <td>{{ $referee->PhoneNumber }}</td>
+                                    <td>{{ $referee->Phone_Number }}</td>
                                     <td class="text-center">
                                         <label class="m-0 p-0">
                                             <a href="/referees/{{ $referee->id }}" class="form-button">
@@ -39,11 +39,11 @@
                                         
                                         
                                         <label class="m-0 p-0">
-                                            <form action="/referees/{{ $referee->id }}" method="POST" class="form-button">
+                                            <form id="form{{ $referee->id }}" action="/referees/{{ $referee->id }}" method="POST" class="form-button">
                                                 @method('DELETE')
                                                 {{ csrf_field() }}
 
-                                                <button class="btn btn-link text-danger m-0 p-0">
+                                                <button type="button" onclick="confirmDeletion('form{{ $referee->id }}', 'Are you sure you want to referee ({{ $referee->First_Name }})?')" class="btn btn-link text-danger m-0 p-0">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
 
