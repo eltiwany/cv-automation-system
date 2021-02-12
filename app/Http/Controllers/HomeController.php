@@ -43,12 +43,14 @@ class HomeController extends Controller
         $personal_informations = PersonalInformation::where('user_id', $user_id);
         if ($personal_informations->exists())
             $personal_informations = array_push($user_array, [
+                'icon-classes' => 'fa fa-users',
                 'name' => 'Personal Information',
                 'percent' => $personal_informations->count() * 100,
                 'description' => 'You have filled your information, make sure they are accurately as possible!'
                 ]);
         else
             $personal_informations = array_push($user_array, [
+                'icon-classes' => 'fa fa-users',
                 'name' => 'Personal Information',
                 'percent' => $personal_informations->count() * 100,
                 'description' => 'Start filling your personal informations!'
@@ -58,12 +60,14 @@ class HomeController extends Controller
         $education_back_grounds = EducationBackGround::where('user_id', $user_id);
         if ($education_back_grounds->exists())
             $education_back_grounds = array_push($user_array, [
+                'icon-classes' => 'fa fa-graduation-cap',
                 'name' => 'Education Background',
                 'percent' => intval($education_back_grounds->count()/3 * 100),
                 'description' => $education_back_grounds->count() !== 3 ? $education_back_grounds->count() . ' educational background have been added, add more to perfect your CV' : 'Everything looks good here!'
                 ]);
         else
             $education_back_grounds = array_push($user_array, [
+                'icon-classes' => 'fa fa-graduation-cap',
                 'name' => 'Education Background',
                 'percent' => $education_back_grounds->count(),
                 'description' => 'Start filling up at least one educational background'
@@ -73,12 +77,14 @@ class HomeController extends Controller
         $languages = Language::where('user_id', $user_id);
         if ($languages->exists())
             $languages = array_push($user_array, [
+                'icon-classes' => 'fa fa-globe',
                 'name' => 'Languages',
                 'percent' => intval($languages->count()/2 * 100),
                 'description' => $languages->count() . ' language(s) added.'
                 ]);
         else
             $languages = array_push($user_array, [
+                'icon-classes' => 'fa fa-globe',
                 'name' => 'Languages',
                 'percent' => $languages->count(),
                 'description' => 'No languages found, fill in atleast two.'
@@ -88,12 +94,14 @@ class HomeController extends Controller
         $hobbies = Hobby::where('user_id', $user_id);
         if ($hobbies->exists())
             $hobbies = array_push($user_array, [
+                'icon-classes' => 'fa fa-smile-o',
                 'name' => 'Hobbies',
                 'percent' => intval($hobbies->count()/2 * 100),
                 'description' => $hobbies->count() . ' hobbie(s) added.'
                 ]);
         else
             $hobbies = array_push($user_array, [
+                'icon-classes' => 'fa fa-smile-o',
                 'name' => 'Hobbies',
                 'percent' => $hobbies->count(),
                 'description' => 'No hobbies found, fill in atleast two.'
@@ -103,12 +111,14 @@ class HomeController extends Controller
         $project_and_researches = ProjectAndResearch::where('user_id', $user_id);
         if ($project_and_researches->exists())
             $project_and_researches = array_push($user_array, [
+                'icon-classes' => 'fa fa-rocket',
                 'name' => 'Project and Researches',
                 'percent' => $project_and_researches->count(),
                 'description' => $project_and_researches->count() . ' project/researche(s) have been added.'
                 ]);
         else
             $project_and_researches = array_push($user_array, [
+                'icon-classes' => 'fa fa-rocket',
                 'name' => 'Project and Researches',
                 'percent' => $project_and_researches->count(),
                 'description' => 'No projects or researches found, add to strengthen your CV!'
@@ -118,12 +128,14 @@ class HomeController extends Controller
         $work_experiences = WorkExperience::where('user_id', $user_id);
         if ($work_experiences->exists())
             $work_experiences = array_push($user_array, [
+                'icon-classes' => 'fa fa-suitcase',
                 'name' => 'Work Experiences',
                 'percent' => intval($work_experiences->count()/2 * 100),
                 'description' => $work_experiences->count() . ' work experience(s) have been added.'
                 ]);
         else
             $work_experiences = array_push($user_array, [
+                'icon-classes' => 'fa fa-suitcase',
                 'name' => 'Work Experiences',
                 'percent' => $work_experiences->count(),
                 'description' => 'No work experiences found, add at least two!'
@@ -133,12 +145,14 @@ class HomeController extends Controller
         $referees = Referee::where('user_id', $user_id);
         if ($referees->exists())
             $referees = array_push($user_array, [
+                'icon-classes' => 'fa fa-gavel',
                 'name' => 'Referees',
                 'percent' => intval($referees->count()/2 * 100),
                 'description' => $referees->count() . ' referee(s) have been added.'
                 ]);
         else
             $referees = array_push($user_array, [
+                'icon-classes' => 'fa fa-gavel',
                 'name' => 'Referees',
                 'percent' => $referees->count(),
                 'description' => 'No referees found, add at least two!'
