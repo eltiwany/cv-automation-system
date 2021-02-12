@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Referee;
 use Illuminate\Http\Request;
 
 class RefereesController extends Controller
@@ -13,7 +14,8 @@ class RefereesController extends Controller
      */
     public function index()
     {
-        //
+        $referees = Referee::where('user_id', auth()->user()->id)->paginate(10);
+        return view('user-information.referees.index', compact('referees'));
     }
 
     /**
@@ -45,7 +47,7 @@ class RefereesController extends Controller
      */
     public function show($id)
     {
-        //
+        return "you are in edit view";
     }
 
     /**
@@ -79,6 +81,6 @@ class RefereesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return "you are in destroy view";
     }
 }
