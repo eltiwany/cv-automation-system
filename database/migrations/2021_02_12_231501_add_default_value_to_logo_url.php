@@ -14,7 +14,7 @@ class AddDefaultValueToLogoUrl extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('logo_url');
+            $table->string('logo_url')->default('')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddDefaultValueToLogoUrl extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('logo_url')->default('');
+            $table->dropColumn('logo_url');
         });
     }
 }
