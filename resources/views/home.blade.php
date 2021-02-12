@@ -12,7 +12,7 @@
                     @foreach ($stats as $stat)
                         <?php ++$i; ?>
                         <div class="p-2 col @if ($i == count($stats)) col-md-12 @else col-md-6 @endif m-0">
-                            <a href="" class="m-0 p-0 no-decoration">
+                            <a href="{{ $stat['url'] }}" class="m-0 p-0 no-decoration">
                                 <div class="alert m-0 @if($stat['percent'] >= 75) alert-success @elseif ($stat['percent'] >= 50) alert-primary @else alert-danger @endif">
                                     <h5 class="card-title">
                                         <i class="{{ $stat['icon-classes'] }}"></i> 
