@@ -36,12 +36,19 @@
                 @include('inc.side-nav')
                 <main class="page-content">
                     <div class="container-fluid body-custom">
-                        @isset($success)
+                        @if(isset($success))
                             <div class="alert alert-success">{{ $success }}</div>
-                        @endisset
-                        @isset($error)
-                            <div class="alert alert-success">{{ $success }}</div>
-                        @endisset
+                        @endif
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                    {{ $error }} <br/>
+                                @endforeach
+                            </div>
+                        @endif
+                        @if(session('status') !== null)
+                            <div class="alert alert-success">{{ session('status') }}</div>
+                        @endif
                         @yield('content')           
                     </div>
                 </main>
@@ -58,5 +65,13 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/custom-side.js') }}"></script>
+    <script>
+        function confirmDeletion(formID, message) {
+          var confirmed = confirm(message);
+          if (confirmed) {
+            document.getElementById(formID).submit();
+          }
+        }
+    </script>
 </body>
 </html>
