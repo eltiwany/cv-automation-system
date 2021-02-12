@@ -62,3 +62,7 @@ footer a {
     font-size: 20px !important;
     border-radius: 0 !important;
 }
+
+.no-decoration {
+    text-decoration: none !important;
+}
