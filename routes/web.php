@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/personal-information' ,'PersonalInformationsController');
-Route::resource('/educational-background' ,'EducationalBackgroundsController');
+Route::resource('/educational-background' ,'EducationBackgroundsController');
 Route::resource('/referees' ,'RefereesController');
 Route::resource('/hobbies', "HobbiesController");
 Route::post('/upload-image', 'PersonalInformationsController@upload_image');
