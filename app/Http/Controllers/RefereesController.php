@@ -104,6 +104,11 @@ class RefereesController extends Controller
      */
     public function destroy($id)
     {
-       //
+        $referees = Referee::find($id);
+        if ($referees->user_id === auth()->user()->id)
+            Referee::destroy($id);
+        else
+            return "Unauthorized action blocked.";
+        return redirect()->route('referees.index')->with('success', 'Referee deleted.');
     }
 }
