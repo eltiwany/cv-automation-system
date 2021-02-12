@@ -18,7 +18,7 @@
           @if (empty(auth()->user()->logo_url))
             <i class="fa fa-user text-dark user-large"></i>
           @else
-            <img src="storage/profile_images/{{ auth()->user()->logo_url }}">  
+            <img src="{{ asset('storage/profile_images/' . auth()->user()->logo_url) }}">  
           @endif
           <input onchange="this.form.submit('/upload-image')" type="file" hidden id="image" name="image">
         </form>
@@ -36,7 +36,7 @@
             <i class="fa fa-upload"></i> Change Image
           </label>
           <br/>
-          <label onclick="confirmDeletion()" class="btn btn-sm btn-danger image-btn">
+          <label onclick="confirmDeletion('form', 'Are you sure you what to remove this image?')" class="btn btn-sm btn-danger image-btn">
             <i class="fa fa-trash"></i> Remove Image
           </label>        
         @else
@@ -46,15 +46,6 @@
         @endif
       </div>
     </div>
-
-    <script>
-      function confirmDeletion() {
-        var confirmed = confirm('Are you sure you what to remove this image?');
-        if (confirmed) {
-          document.getElementById('form').submit();
-        }
-      }
-    </script>
 
     <div class="sidebar-menu">
       <ul>
