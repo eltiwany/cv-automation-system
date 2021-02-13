@@ -73,3 +73,19 @@ footer a {
     padding: 0 !important;
     float: right;
 }
+
+.active {
+    background-color: rgb(40, 69, 92) !important;
+    color: #aceeff !important;
+    font-weight: bold;
+    padding: 7px !important;
+    margin-right: -5px !important;
+    padding-left: 20px !important;
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+}
+
+.active i {
+    background-color: #aceeff !important;
+    color: black !important;
+}
