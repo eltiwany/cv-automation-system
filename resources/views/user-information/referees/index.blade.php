@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-12 m-0 p-0">
             <div class="card">
                 <div class="card-header h4 alert-default">
                     Referees
@@ -14,7 +14,7 @@
                 <div class="card-body">
                     
                     @if (count($referees) > 0)
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-striped table-hover">
                             <tr>
                                 <th>First Name</th>
                                 <th>Other Names</th>
@@ -30,7 +30,7 @@
                                     <td>{{ $referee->Phone_Number }}</td>
                                     <td class="text-center">
                                         <label class="m-0 p-0">
-                                            <a href="/referees/{{ $referee->id }}" class="form-button">
+                                            <a href="/referees/{{ $referee->id }}/edit" class="form-button">
                                                 <button class="btn btn-link text-primary m-0 p-0 pr-3">
                                                     <i class="fa fa-pencil"></i>
                                                 </button>
