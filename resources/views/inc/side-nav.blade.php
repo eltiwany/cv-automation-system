@@ -49,47 +49,53 @@
 
     <div class="sidebar-menu">
       <ul>
+        <li class="pt-1">
+          <a href="/home" @if ($url === 'home') class="active" @endif>
+            <i class="fa fa-dashboard"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
         <li class="header-menu">
           <span>CV Required Informations</span>
         </li>
         <li>
-          <a href="/personal-information">
+          <a href="/personal-information"@if ($url === 'personal-information') class="active" @endif>
             <i class="fa fa-users"></i>
             <span>Personal Information</span>
           </a>
         </li>
         <li>
-          <a href="/educational-background">
+          <a href="/educational-background" @if ($url === 'educational-background') class="active" @endif>
             <i class="fa fa-graduation-cap"></i>
             <span>Educational Background</span>
           </a>
         </li>
         <li>
-          <a href="/language">
+          <a href="/language" @if ($url === 'language') class="active" @endif>
             <i class="fa fa-globe"></i>
             <span>Languages</span>
           </a>
         </li>
         <li>
-          <a href="/hobbies">
+          <a href="/hobbies" @if ($url === 'hobbies') class="active" @endif>
             <i class="fa fa-smile-o"></i>
             <span>Hobbies</span>
           </a>
         </li>
         <li>
-          <a href="/project-research">
+          <a href="/project-research" @if ($url === 'project-research') class="active" @endif>
             <i class="fa fa-rocket"></i>
             <span>Project/Research</span>
           </a>
         </li>
         <li>
-          <a href="work-experince">
+          <a href="work-experince" @if ($url === 'work-experience') class="active" @endif>
             <i class="fa fa-suitcase"></i>
             <span>Work Experience</span>
           </a>
         </li>
         <li>
-          <a href="referees">
+          <a href="referees" @if ($url === 'referees') class="active" @endif>
             <i class="fa fa-gavel"></i>
             <span>Referees</span>
           </a>
@@ -105,13 +111,13 @@
           <div class="sidebar-submenu">
             <ul>
               <li>
-                <a href="/template">
+                <a href="/template" @if ($url === 'template') class="active" @endif>
                   <i class="fa fa-folder"></i>
                   <span>Choose from Selection</span>
                 </a>
               </li>
               <li>
-                <a href="/template/create">
+                <a href="/template-create" @if ($url === 'template-create') class="active" @endif>
                   <i class="fa fa-plus"></i>
                   <span>Create New Template</span>
                 </a>
@@ -131,19 +137,19 @@
           <div class="sidebar-submenu">
             <ul>
               <li>
-                <a href="/download-print">
+                <a href="/download-word" @if ($url === 'download-word') class="active" @endif>
                   <i class="fa fa-file-word-o"></i>
                   <span>Download as Word</span>
                 </a>
               </li>
               <li>
-                <a href="download-print">
+                <a href="download-pdf" @if ($url === 'download-pdf') class="active" @endif>
                   <i class="fa fa-file-pdf-o"></i>
                   <span>Download as PDF</span>
                 </a>
               </li>
               <li>
-                <a href="download-print">
+                <a href="print" @if ($url === 'print') class="active" @endif>
                   <i class="fa fa-print"></i>
                   <span>Print CV</span>
                 </a>
