@@ -59,19 +59,19 @@
           <span>CV Required Informations</span>
         </li>
         <li>
-          <a href="/personal-information"@if ($url === 'personal-information') class="active" @endif>
+          <a href="/personal-informations"@if ($url === 'personal-informations') class="active" @endif>
             <i class="fa fa-users"></i>
             <span>Personal Information</span>
           </a>
         </li>
         <li>
-          <a href="/educational-background" @if ($url === 'educational-background') class="active" @endif>
+          <a href="/educational-backgrounds" @if ($url === 'educational-backgrounds') class="active" @endif>
             <i class="fa fa-graduation-cap"></i>
             <span>Educational Background</span>
           </a>
         </li>
         <li>
-          <a href="/language" @if ($url === 'language') class="active" @endif>
+          <a href="/languages" @if ($url === 'languages') class="active" @endif>
             <i class="fa fa-globe"></i>
             <span>Languages</span>
           </a>
@@ -83,13 +83,13 @@
           </a>
         </li>
         <li>
-          <a href="/project-research" @if ($url === 'project-research') class="active" @endif>
+          <a href="/project-researches" @if ($url === 'project-researces') class="active" @endif>
             <i class="fa fa-rocket"></i>
             <span>Project/Research</span>
           </a>
         </li>
         <li>
-          <a href="work-experince" @if ($url === 'work-experience') class="active" @endif>
+          <a href="work-experince" @if ($url === 'work-experiences') class="active" @endif>
             <i class="fa fa-suitcase"></i>
             <span>Work Experience</span>
           </a>
@@ -111,13 +111,13 @@
           <div class="sidebar-submenu">
             <ul>
               <li>
-                <a href="/template" @if ($url === 'template') class="active" @endif>
+                <a href="/templates" @if ($url === 'templates') class="active" @endif>
                   <i class="fa fa-folder"></i>
                   <span>Choose from Selection</span>
                 </a>
               </li>
               <li>
-                <a href="/template-create" @if ($url === 'template-create') class="active" @endif>
+                <a href="/create-template" @if ($url === 'create-template') class="active" @endif>
                   <i class="fa fa-plus"></i>
                   <span>Create New Template</span>
                 </a>

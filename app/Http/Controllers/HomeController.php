@@ -43,7 +43,7 @@ class HomeController extends Controller
         $personal_informations = PersonalInformation::where('user_id', $user_id);
         if ($personal_informations->exists())
             $personal_informations = array_push($user_array, [
-                'url' => '/personal-information',
+                'url' => '/personal-informations',
                 'icon-classes' => 'fa fa-users',
                 'name' => 'Personal Information',
                 'percent' => $personal_informations->count() * 100,
@@ -51,7 +51,7 @@ class HomeController extends Controller
                 ]);
         else
             $personal_informations = array_push($user_array, [
-                'url' => '/personal-information',
+                'url' => '/personal-informations',
                 'icon-classes' => 'fa fa-users',
                 'name' => 'Personal Information',
                 'percent' => $personal_informations->count() * 100,
@@ -62,7 +62,7 @@ class HomeController extends Controller
         $education_back_grounds = EducationBackGround::where('user_id', $user_id);
         if ($education_back_grounds->exists())
             $education_back_grounds = array_push($user_array, [
-                'url' => '/education-background',
+                'url' => '/education-backgrounds',
                 'icon-classes' => 'fa fa-graduation-cap',
                 'name' => 'Education Background',
                 'percent' => intval($education_back_grounds->count()/3 * 100),
@@ -70,7 +70,7 @@ class HomeController extends Controller
                 ]);
         else
             $education_back_grounds = array_push($user_array, [
-                'url' => '/education-background',
+                'url' => '/education-backgrounds',
                 'icon-classes' => 'fa fa-graduation-cap',
                 'name' => 'Education Background',
                 'percent' => $education_back_grounds->count(),
@@ -81,7 +81,7 @@ class HomeController extends Controller
         $languages = Language::where('user_id', $user_id);
         if ($languages->exists())
             $languages = array_push($user_array, [
-                'url' => '/language',
+                'url' => '/languages',
                 'icon-classes' => 'fa fa-globe',
                 'name' => 'Languages',
                 'percent' => intval($languages->count()/2 * 100),
@@ -89,7 +89,7 @@ class HomeController extends Controller
                 ]);
         else
             $languages = array_push($user_array, [
-                'url' => '/language',
+                'url' => '/languages',
                 'icon-classes' => 'fa fa-globe',
                 'name' => 'Languages',
                 'percent' => $languages->count(),
@@ -119,7 +119,7 @@ class HomeController extends Controller
         $project_and_researches = ProjectAndResearch::where('user_id', $user_id);
         if ($project_and_researches->exists())
             $project_and_researches = array_push($user_array, [
-                'url' => '/project-research',
+                'url' => '/project-researches',
                 'icon-classes' => 'fa fa-rocket',
                 'name' => 'Project and Researches',
                 'percent' => $project_and_researches->count(),
@@ -127,7 +127,7 @@ class HomeController extends Controller
                 ]);
         else
             $project_and_researches = array_push($user_array, [
-                'url' => '/project-research',
+                'url' => '/project-researches',
                 'icon-classes' => 'fa fa-rocket',
                 'name' => 'Project and Researches',
                 'percent' => $project_and_researches->count(),
@@ -138,7 +138,7 @@ class HomeController extends Controller
         $work_experiences = WorkExperience::where('user_id', $user_id);
         if ($work_experiences->exists())
             $work_experiences = array_push($user_array, [
-                'url' => '/work-experience',
+                'url' => '/work-experiences',
                 'icon-classes' => 'fa fa-suitcase',
                 'name' => 'Work Experiences',
                 'percent' => intval($work_experiences->count()/2 * 100),
@@ -146,7 +146,7 @@ class HomeController extends Controller
                 ]);
         else
             $work_experiences = array_push($user_array, [
-                'url' => '/work-experience',
+                'url' => '/work-experiences',
                 'icon-classes' => 'fa fa-suitcase',
                 'name' => 'Work Experiences',
                 'percent' => $work_experiences->count(),
