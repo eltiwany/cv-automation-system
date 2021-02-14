@@ -9,7 +9,7 @@
                     Add Work Experience
                 </div>
                 <div class="card-body">
-                    <form action="/referees" method="POST">
+                    <form action="/work-experiences" method="POST">
                         @csrf
                         <div class="row">
                             <div class="form-group col-md-6">
@@ -19,17 +19,17 @@
                             
                             <div class="form-group col-md-6">
                                 <label for="second_name">Time Started </label>
-                                <input type="text" name="TimeStarted"  id="TimeStarted" placeholder="Time Started" class="form-control"/>
+                                <input type="text" name="time_started"  id="time_started" placeholder="Time Started" class="form-control"/>
                             </div> 
 
                             <div class="form-group col-md-6">
                                 <label for="phone_number">Time Ended </label>
-                                <input type="text" name="TimeEnded"  id="TimeEnded" placeholder="Time Ended" class="form-control"/>
+                                <input type="text" name="time_ended"  id="time_ended" placeholder="Time Ended" class="form-control"/>
                             </div> 
 
                             <div class="form-group col-md-6">
                                 <label for="email">Company Name and Description</label>
-                                <input type="text" name="Description"  id="Description" placeholder="Company Name and Deescription" class="form-control"/>
+                                <input type="text" name="description"  id="description" placeholder="Company Name and Deescription" class="form-control"/>
                             </div>
 
                             <div class="form-group col-md-12 mb-0">
