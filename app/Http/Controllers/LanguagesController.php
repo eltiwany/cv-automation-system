@@ -71,10 +71,10 @@ class LanguagesController extends Controller
     {
         $languages = Language::find($id);
         if ($languages->user_id === auth()->user()->id)
-            $education_background = Language::find($id);
+            $languages = Language::find($id);
         else
             return "Unauthorized action blocked.";
-        return view('user-information.languages.edit', compact('language'));
+        return view('user-information.languages.edit', compact('languages'));
     }
 
     /**
