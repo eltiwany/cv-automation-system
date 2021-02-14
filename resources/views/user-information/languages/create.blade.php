@@ -5,9 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-12 p-0">
             <div class="card shadow-custom" >
-                <div class="card-header  h4 bg-custom-medium"></div>
-                <i class="fa fa-plus-globe header-icon"></i>
-                         Add Languages 
+                <div class="card-header  h4 bg-custom-medium">
+                    <i class="fa fa-plus-square header-icon"></i>
+                    Add Language 
+                </div>
                 <div class="card-body bg-custom-light">
                     <form method="POST" action="/languages">
                         @csrf

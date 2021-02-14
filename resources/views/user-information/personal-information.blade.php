@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12 p-0">
             <div class="card shadow-custom">
-                <div class="card-header bg-custom-medium">
+                <div class="card-header h4 bg-custom-medium">
                     <i class="fa fa-users header-icon"></i>
                     Personal Information
                 </div>
