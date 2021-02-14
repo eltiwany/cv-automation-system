@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\EducationBackGround;
+use Illuminate\Support\Facades\Validator;
 
 class EducationBackgroundsController extends Controller
 {
@@ -25,7 +26,7 @@ class EducationBackgroundsController extends Controller
      */
     public function create()
     {
-        //
+        return view('user-information.education-backgrounds.create');
     }
 
     /**
@@ -36,6 +37,13 @@ class EducationBackgroundsController extends Controller
      */
     public function store(Request $request)
     {
+        Validator::make($request->all(), [
+            'name' => 'required',
+            'type' => 'required',
+            'TimeStarted' => 'required',
+            'TimeEnded' => 'required'
+        ])->validate();
+
         $y=new EducationBackGround;
         $y->name=$request->name;
         $y->type=$request->type;
@@ -43,6 +51,8 @@ class EducationBackgroundsController extends Controller
         $y->TimeEnded=$request->TimeEnded;
         $y->user()->associate($request->user());
         $y->save();
+
+        return redirect()->route('education-backgrounds.index')->with('success', 'Education Background Added.');
     }
 
     /**
@@ -63,8 +73,13 @@ class EducationBackgroundsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {  
+        $education_background = EducationBackground::find($id);
+        if ($education_background->user_id === auth()->user()->id)
+            $education_background = EducationBackground::find($id);
+        else
+            return "Unauthorized action blocked.";
+        return view('user-information.education-backgrounds.edit', compact('education_background'));
     }
 
     /**
@@ -76,7 +91,21 @@ class EducationBackgroundsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Validator::make($request->all(), [
+            'name' => 'required',
+            'type' => 'required',
+            'TimeStarted' => 'required',
+            'TimeEnded' => 'required'
+        ])->validate();
+
+        $y=EducationBackGround::find($id);
+        $y->name=$request->name;
+        $y->type=$request->type;
+        $y->TimeStarted=$request->TimeStarted;
+        $y->TimeEnded=$request->TimeEnded;
+        $y->save();
+
+        return redirect()->route('education-backgrounds.index')->with('success', 'Education Background Updated.');
     }
 
     /**
@@ -87,6 +116,11 @@ class EducationBackgroundsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $education_backgrounds = EducationBackground::find($id);
+        if ($education_backgrounds->user_id === auth()->user()->id)
+            EducationBackground::destroy($id);
+        else
+            return "Unauthorized action blocked.";
+        return redirect()->route('education-backgrounds.index')->with('success', 'Education Background deleted.');
     }
 }
