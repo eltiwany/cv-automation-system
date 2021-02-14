@@ -27,7 +27,9 @@ class PersonalInformationsController extends Controller
         if (PersonalInformation::where('user_id', $user_id)->exists()) {
             $user_exist = true;
             $personal_information = PersonalInformation::where('user_id', $user_id)->first();
-        }
+        }else 
+            $personal_information = [];
+
         return view('user-information.personal-information', compact('personal_information', 'user_exist'));
     }
 
