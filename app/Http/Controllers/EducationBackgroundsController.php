@@ -14,7 +14,8 @@ class EducationBackgroundsController extends Controller
      */
     public function index()
     {
-        //
+        $education_backgrounds = EducationBackGround::where('user_id', auth()->user()->id)->paginate(10);
+        return view('user-information.education-backgrounds.index', compact('education_backgrounds'));
     }
 
     /**
