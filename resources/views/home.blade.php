@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-12 p-0">
             <div class="card">
                 <div class="card-header h4 alert-default">Hi {{ auth()->user()->first_name }}, here is your progress!</div>
                 <div class="card-body">

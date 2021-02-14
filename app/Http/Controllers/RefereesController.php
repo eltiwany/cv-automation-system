@@ -70,7 +70,7 @@ class RefereesController extends Controller
      */
     public function show($id)
     {
-        return "you are in edit view";
+        //
     }
 
     /**
@@ -81,7 +81,11 @@ class RefereesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $referee = Referee::find($id);
+        if ($referee->user_id === auth()->user()->id)
+            return view('user-information.referees.edit', compact('referee'));
+        else
+            return "Unauthorized action blocked.";
     }
 
     /**
@@ -93,7 +97,26 @@ class RefereesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'first_name' => 'required',
+            'second_name' => 'required',
+            'phone_number' => 'required|min:12',
+            'email' => 'required|email',
+        ], [
+            'phone_number.min' => 'Phone number must be exactly 12 charachers format 255777111222'
+        ]);
+        $validator->validate();
+        
+        $referees = Referee::find($id);
+        if ($referees->user_id === auth()->user()->id) {
+            $referees->First_Name = $request->get('first_name');
+            $referees->Second_Name = $request->get('second_name');
+            $referees->Phone_Number = $request->get('phone_number');
+            $referees->Email = $request->get('email');
+            $referees->save();
+        }else
+            return "Unauthorized action blocked.";
+        return redirect()->route('referees.index')->with('success', 'Referee has been updated!');
     }
 
     /**

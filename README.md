@@ -52,6 +52,7 @@ For unexperienced users, please follow each step clearly and do not skip any ste
    1. `DB_USERNAME=root`
    1. `DB_PASSWORD=`
 1. Run the following command to import database `php artisan migrate`
+1. Link storage to public directory by running `php artisan storage:link`
 1. Finally run the system by typing `php artisan serve` then open the browser at `localhost:8000`
 
 ---------------

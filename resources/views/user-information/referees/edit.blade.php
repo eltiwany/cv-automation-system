@@ -6,35 +6,36 @@
         <div class="col-md-12 p-0">
             <div class="card m-0">
                 <div class="card-header h4 alert-default">
-                    Add Referee
+                    Update Information for Referee: {{ $referee->First_Name . " "  . $referee->Second_Name}}
                 </div>
                 <div class="card-body">
-                    <form action="/referees" method="POST">
+                    <form action="/referees/{{ $referee->id }}" method="POST">
+                        @method('PUT')
                         @csrf
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="first_name">First Name</label>
-                                <input type="text" name="first_name" value="{{ old('first_name') }}" id="first_name" placeholder="First Name" class="form-control"/>
+                                <input type="text" name="first_name" value="{{ $referee->First_Name }}" id="first_name" placeholder="First Name" class="form-control"/>
                             </div> 
                             
                             <div class="form-group col-md-6">
                                 <label for="second_name">Other Names</label>
-                                <input type="text" name="second_name" value="{{ old('second_name') }}" id="second_name" placeholder="Other Names" class="form-control"/>
+                                <input type="text" name="second_name" value="{{ $referee->Second_Name }}" id="second_name" placeholder="Other Names" class="form-control"/>
                             </div> 
 
                             <div class="form-group col-md-6">
                                 <label for="phone_number">Phone Number</label>
-                                <input type="text" name="phone_number" value="{{ old('phone_number') }}" id="phone_number" placeholder="Phone Number" class="form-control"/>
+                                <input type="text" name="phone_number" value="{{ $referee->Phone_Number }}" id="phone_number" placeholder="Phone Number" class="form-control"/>
                             </div> 
 
                             <div class="form-group col-md-6">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" value="{{ old('email') }}" id="email" placeholder="Email" class="form-control"/>
+                                <input type="email" name="email" value="{{ $referee->Email }}" id="email" placeholder="Email" class="form-control"/>
                             </div>
 
                             <div class="form-group col-md-12 mb-0">
                                <button type="submit" class="btn btn-primary mb-0 pull-right">
-                                   <i class="fa fa-plus-square"></i> Add
+                                   <i class="fa fa-check-circle"></i> Update
                                 </button>
                             </div>
 

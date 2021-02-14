@@ -6,31 +6,31 @@
         <div class="col-md-12 m-0 p-0">
             <div class="card">
                 <div class="card-header h4 alert-default">
-                    Referees
-                    <a href="/referees/create" class="btn btn-primary btn-sm float-right">
-                        <i class="fa fa-plus-square"></i> Add Referee
+                    Work Experiences
+                    <a href="/work-experiences/create" class="btn btn-primary btn-sm float-right">
+                        <i class="fa fa-plus-square"></i> Add Work Experience
                     </a>
                 </div>
                 <div class="card-body">
                     
-                    @if (count($referees) > 0)
+                    @if (count($work_experiences) > 0)
                         <table class="table table-bordered table-striped table-hover">
                             <tr>
-                                <th>First Name</th>
-                                <th>Other Names</th>
-                                <th>Email</th>
-                                <th>Phone Number</th>
+                                <th>Worked At</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Description</th>
                                 <th>Actions</th>
                             </tr>
-                            @foreach ($referees as $referee)
+                            @foreach ($work_experiences as $work_experience)
                                 <tr>
-                                    <td>{{ $referee->First_Name }}</td>
-                                    <td>{{ $referee->Second_Name }}</td>
-                                    <td>{{ $referee->Email }}</td>
-                                    <td>{{ $referee->Phone_Number }}</td>
+                                    <td>{{ $work_experience->name }}</td>
+                                    <td>{{ $work_experience->TimeStarted }}</td>
+                                    <td>{{ $work_experience->TimeEnded }}</td>
+                                    <td>{{ $work_experience->Description }}</td>
                                     <td class="text-center">
                                         <label class="m-0 p-0">
-                                            <a href="/referees/{{ $referee->id }}/edit" class="form-button">
+                                            <a href="/work-experiences/{{ $work_experience->id }}/edit" class="form-button">
                                                 <button class="btn btn-link text-primary m-0 p-0 pr-3">
                                                     <i class="fa fa-pencil"></i>
                                                 </button>
@@ -39,11 +39,11 @@
                                         
                                         
                                         <label class="m-0 p-0">
-                                            <form id="form{{ $referee->id }}" action="/referees/{{ $referee->id }}" method="POST" class="form-button">
+                                            <form id="form{{ $work_experience->id }}" action="/work-experiences/{{ $work_experience->id }}" method="POST" class="form-button">
                                                 @method('DELETE')
                                                 {{ csrf_field() }}
 
-                                                <button type="button" onclick="confirmDeletion('form{{ $referee->id }}', 'Are you sure you want to referee ({{ $referee->First_Name }})?')" class="btn btn-link text-danger m-0 p-0">
+                                                <button type="button" onclick="confirmDeletion('form{{ $work_experience->id }}', 'Are you sure you want to work experience ({{ $work_experience->name }})?')" class="btn btn-link text-danger m-0 p-0">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
 
@@ -55,10 +55,10 @@
                         </table>
                     @else
                         <p class="font-weight-bold text-center p-3">
-                            No referees found, start adding by clicking "Add New" at top left! 
+                            No work experiences found, star adding by clicking "Add New" at top left! 
                         </p>
                     @endif
-                    {{ $referees->links() }}
+                    {{ $work_experiences->links() }}
                 </div>
             </div>
         </div>
