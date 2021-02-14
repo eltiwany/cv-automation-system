@@ -62,3 +62,50 @@ footer a {
     font-size: 20px !important;
     border-radius: 0 !important;
 }
+
+.no-decoration {
+    text-decoration: none !important;
+}
+
+.form-button {
+    width: fit-content !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: right;
+}
+
+.active {
+    background-color: rgb(40, 69, 92) !important;
+    color: #aceeff !important;
+    font-weight: bold;
+    padding: 7px !important;
+    margin-right: -5px !important;
+    padding-left: 20px !important;
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+}
+
+.active i {
+    background-color: #aceeff !important;
+    color: black !important;
+}
+
+.bg-custom-light {
+    background-color: #ecf7ff !important;
+    border: 0 !important;
+}
+
+.bg-custom-medium {
+    background-color: #c7edff !important;
+    border-bottom: 2px solid rgb(84, 134, 167) !important;
+}
+
+.shadow-custom {
+    box-shadow: 0px 3px 0px rgb(133, 167, 190) !important;
+}
+
+.header-icon {
+    margin-right: 10px !important;
+    padding-right: 10px !important;
+    border-right: 2px solid rgb(84, 134, 167) !important;
+}

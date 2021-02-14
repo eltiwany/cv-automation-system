@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Validator;
 use App\User;
 use Illuminate\Support\Facades\Storage;
+use App\PersonalInformation;
+use Illuminate\Support\Facades\Validator;
 
 class PersonalInformationsController extends Controller
 {
@@ -14,9 +15,20 @@ class PersonalInformationsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct() {
+        return $this->middleware('auth');
+    }
+
     public function index()
     {
-        //
+        $user_id = auth()->user()->id;
+        $user_exist = false;
+        if (PersonalInformation::where('user_id', $user_id)->exists()) {
+            $user_exist = true;
+            $personal_information = PersonalInformation::where('user_id', $user_id)->first();
+        }
+        return view('user-information.personal-information', compact('personal_information', 'user_exist'));
     }
 
     /**
@@ -26,7 +38,7 @@ class PersonalInformationsController extends Controller
      */
     public function create()
     {
-        //
+       // return view('user-information.personal-information');
     }
 
     /**
@@ -37,7 +49,28 @@ class PersonalInformationsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Validator::make($request->all(), [
+            'Email' => 'required|email',
+            'Phone_Number' => 'required|min:10|max:10',
+            'DateOf_Birth' => 'required',
+            'Martial_Status' => 'required',
+            'Gender'=>'required',
+            'Address'=>'required'
+        ])->validate();
+
+        $user_id = auth()->user()->id;
+
+        $x=new PersonalInformation;
+        $x->Email=$request->Email;
+        $x->Phone_Number=$request->Phone_Number;
+        $x->DateOf_Birth=$request->DateOf_Birth;
+        $x->Martial_Status=$request->Martial_Status;
+        $x->Gender=$request->Gender;
+        $x->Address=$request->Address;
+        $x->user()->associate($request->user());
+
+        $x->save();
+        return redirect()->route('personal-informations.index')->with('success', 'Personal Informations Saved.');
     }
 
     /**
@@ -71,7 +104,24 @@ class PersonalInformationsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Validator::make($request->all(), [
+            'Email' => 'required|email',
+            'Phone_Number' => 'required|min:10|max:10',
+            'DateOf_Birth' => 'required',
+            'Martial_Status' => 'required',
+            'Gender'=>'required',
+            'Address'=>'required'
+        ])->validate();
+
+        $x= PersonalInformation::find($id);
+        $x->Email=$request->Email;
+        $x->Phone_Number=$request->Phone_Number;
+        $x->DateOf_Birth=$request->DateOf_Birth;
+        $x->Martial_Status=$request->Martial_Status;
+        $x->Gender=$request->Gender;
+        $x->Address=$request->Address;
+        $x->save();
+        return redirect()->route('personal-informations.index')->with('success', 'Personal Informations Saved.');
     }
 
     /**

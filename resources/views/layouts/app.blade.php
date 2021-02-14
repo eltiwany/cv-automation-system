@@ -21,7 +21,11 @@
     <link href="{{ URL::asset('css/custom-side.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/custom.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-
+    <?php 
+        $full_url = url()->current();
+        $break_url = explode('/', $full_url);
+        $url = end($break_url);
+    ?>
 </head>
 <body>
     {{-- top navigation --}}
@@ -36,8 +40,23 @@
                 @include('inc.side-nav')
                 <main class="page-content">
                     <div class="container-fluid body-custom">
-                        @if (isset($success))
-                            <div class="alert alert-success">{{ $success }}</div>
+                        @if(session('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
+                        @if($errors->any())
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                @foreach ($errors->all() as $error)
+                                    {{ $error }} <br/>
+                                @endforeach
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
                         @endif
                         @yield('content')           
                     </div>
@@ -55,5 +74,13 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/custom-side.js') }}"></script>
+    <script>
+        function confirmDeletion(formID, message) {
+          var confirmed = confirm(message);
+          if (confirmed) {
+            document.getElementById(formID).submit();
+          }
+        }
+    </script>
 </body>
 </html>

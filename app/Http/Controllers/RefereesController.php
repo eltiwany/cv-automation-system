@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Referee;
+use Illuminate\Http\Request;
+<<<<<<< HEAD
+use App\Referee;
+=======
+use Illuminate\Support\Facades\Validator;
+
+>>>>>>> 70d67716384744269847bb00f80afc9098afb2ab
 class RefereesController extends Controller
 {
     /**
@@ -11,9 +17,14 @@ class RefereesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        //
+        $referees = Referee::where('user_id', auth()->user()->id)->paginate(10);
+        return view('user-information.referees.index', compact('referees'));
     }
 
     /**
@@ -23,7 +34,7 @@ class RefereesController extends Controller
      */
     public function create()
     {
-        //
+        return view('user-information.referees.create');
     }
 
     /**
@@ -34,14 +45,25 @@ class RefereesController extends Controller
      */
     public function store(Request $request)
     {
-        $ref= new Referee;
-        $ref->First_Name= $request->firstname;
-        $ref->Second_Name= $request->secondname;
-        $ref->Email= $request->email;
-        $ref->Phone_Number= $request->phone;
-        $ref->user_id = auth()->user()->id;
-        $ref->save(); 
-         
+        $validator = Validator::make($request->all(), [
+            'first_name' => 'required',
+            'second_name' => 'required',
+            'phone_number' => 'required|min:12',
+            'email' => 'required|email',
+        ], [
+            'phone_number.min' => 'Phone number must be exactly 12 charachers format 255777111222'
+        ]);
+        $validator->validate();
+        
+        $referees = new Referee;
+        $referees->First_Name = $request->get('first_name');
+        $referees->Second_Name = $request->get('second_name');
+        $referees->Phone_Number = $request->get('phone_number');
+        $referees->Email = $request->get('email');
+        $referees->user_id = auth()->user()->id;
+        $referees->save();
+
+        return redirect()->route('referees.index')->with('success', 'Referee has been added!');
     }
 
     /**
@@ -63,7 +85,11 @@ class RefereesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $referee = Referee::find($id);
+        if ($referee->user_id === auth()->user()->id)
+            return view('user-information.referees.edit', compact('referee'));
+        else
+            return "Unauthorized action blocked.";
     }
 
     /**
@@ -75,7 +101,26 @@ class RefereesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'first_name' => 'required',
+            'second_name' => 'required',
+            'phone_number' => 'required|min:12',
+            'email' => 'required|email',
+        ], [
+            'phone_number.min' => 'Phone number must be exactly 12 charachers format 255777111222'
+        ]);
+        $validator->validate();
+        
+        $referees = Referee::find($id);
+        if ($referees->user_id === auth()->user()->id) {
+            $referees->First_Name = $request->get('first_name');
+            $referees->Second_Name = $request->get('second_name');
+            $referees->Phone_Number = $request->get('phone_number');
+            $referees->Email = $request->get('email');
+            $referees->save();
+        }else
+            return "Unauthorized action blocked.";
+        return redirect()->route('referees.index')->with('success', 'Referee has been updated!');
     }
 
     /**
@@ -86,6 +131,11 @@ class RefereesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $referees = Referee::find($id);
+        if ($referees->user_id === auth()->user()->id)
+            Referee::destroy($id);
+        else
+            return "Unauthorized action blocked.";
+        return redirect()->route('referees.index')->with('success', 'Referee deleted.');
     }
 }

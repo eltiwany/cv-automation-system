@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +13,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/hobbies', function () {
-    return view('hobbies');
+    return view('index');
 });
 
 Route::get('/project-research', function () {
@@ -40,4 +37,13 @@ Route::post('/project-research', "ProjectandResearchsController@store");
 Route::post('/hobbies', "HobbiesController@store");
 Route::post('/work-experince', "WorkExperiencesContoller@store");
 Route::post('/referees', "RefereesController@store");
+
+Route::resource('/referees' ,'RefereesController');
+Route::resource('/hobbies', "HobbiesController");
+Route::resource('/personal-informations' ,'PersonalInformationsController');
+Route::resource('/languages' ,'LanguagesController');
+Route::resource('/education-backgrounds' ,'EducationBackgroundsController');
+Route::resource('/referees' ,'RefereesController');
+Route::resource('/hobbies', "HobbiesController");
+Route::resource('/work-experiences', "WorkExperiencesController");
 Route::post('/upload-image', 'PersonalInformationsController@upload_image');

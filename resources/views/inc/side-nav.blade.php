@@ -2,7 +2,7 @@
   <div class="sidebar-content">
       @if (!auth()->guest())    
         <div class="sidebar-brand pr-3">
-            <a href="{{ url('/') }}">
+            <a href="{{ url('/home') }}">
               CV Automation System
             </a>
             <div id="close-sidebar">
@@ -18,7 +18,7 @@
           @if (empty(auth()->user()->logo_url))
             <i class="fa fa-user text-dark user-large"></i>
           @else
-            <img src="storage/profile_images/{{ auth()->user()->logo_url }}">  
+            <img src="{{ asset('storage/profile_images/' . auth()->user()->logo_url) }}">  
           @endif
           <input onchange="this.form.submit('/upload-image')" type="file" hidden id="image" name="image">
         </form>
@@ -36,7 +36,7 @@
             <i class="fa fa-upload"></i> Change Image
           </label>
           <br/>
-          <label onclick="confirmDeletion()" class="btn btn-sm btn-danger image-btn">
+          <label onclick="confirmDeletion('form', 'Are you sure you what to remove this image?')" class="btn btn-sm btn-danger image-btn">
             <i class="fa fa-trash"></i> Remove Image
           </label>        
         @else
@@ -47,58 +47,55 @@
       </div>
     </div>
 
-    <script>
-      function confirmDeletion() {
-        var confirmed = confirm('Are you sure you what to remove this image?');
-        if (confirmed) {
-          document.getElementById('form').submit();
-        }
-      }
-    </script>
-
     <div class="sidebar-menu">
       <ul>
+        <li class="pt-1">
+          <a href="/home" @if ($url === 'home') class="active" @endif>
+            <i class="fa fa-dashboard"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
         <li class="header-menu">
           <span>CV Required Informations</span>
         </li>
         <li>
-          <a href="/personal-information">
+          <a href="/personal-informations"@if ($url === 'personal-informations') class="active" @endif>
             <i class="fa fa-users"></i>
             <span>Personal Information</span>
           </a>
         </li>
         <li>
-          <a href="/educational-background">
+          <a href="/education-backgrounds" @if ($url === 'education-backgrounds') class="active" @endif>
             <i class="fa fa-graduation-cap"></i>
             <span>Educational Background</span>
           </a>
         </li>
         <li>
-          <a href="/language">
+          <a href="/languages" @if ($url === 'languages') class="active" @endif>
             <i class="fa fa-globe"></i>
             <span>Languages</span>
           </a>
         </li>
         <li>
-          <a href="/hobbies">
+          <a href="/hobbies" @if ($url === 'hobbies') class="active" @endif>
             <i class="fa fa-smile-o"></i>
             <span>Hobbies</span>
           </a>
         </li>
         <li>
-          <a href="/project-research">
+          <a href="/project-researches" @if ($url === 'project-researches') class="active" @endif>
             <i class="fa fa-rocket"></i>
             <span>Project/Research</span>
           </a>
         </li>
         <li>
-          <a href="work-experince">
+          <a href="work-experiences" @if ($url === 'work-experiences') class="active" @endif>
             <i class="fa fa-suitcase"></i>
             <span>Work Experience</span>
           </a>
         </li>
         <li>
-          <a href="referees">
+          <a href="referees" @if ($url === 'referees') class="active" @endif>
             <i class="fa fa-gavel"></i>
             <span>Referees</span>
           </a>
@@ -114,13 +111,13 @@
           <div class="sidebar-submenu">
             <ul>
               <li>
-                <a href="/template">
+                <a href="/templates" @if ($url === 'templates') class="active" @endif>
                   <i class="fa fa-folder"></i>
                   <span>Choose from Selection</span>
                 </a>
               </li>
               <li>
-                <a href="/template/create">
+                <a href="/create-template" @if ($url === 'create-template') class="active" @endif>
                   <i class="fa fa-plus"></i>
                   <span>Create New Template</span>
                 </a>
@@ -140,19 +137,19 @@
           <div class="sidebar-submenu">
             <ul>
               <li>
-                <a href="/download-print">
+                <a href="/download-word" @if ($url === 'download-word') class="active" @endif>
                   <i class="fa fa-file-word-o"></i>
                   <span>Download as Word</span>
                 </a>
               </li>
               <li>
-                <a href="download-print">
+                <a href="download-pdf" @if ($url === 'download-pdf') class="active" @endif>
                   <i class="fa fa-file-pdf-o"></i>
                   <span>Download as PDF</span>
                 </a>
               </li>
               <li>
-                <a href="download-print">
+                <a href="print" @if ($url === 'print') class="active" @endif>
                   <i class="fa fa-print"></i>
                   <span>Print CV</span>
                 </a>
