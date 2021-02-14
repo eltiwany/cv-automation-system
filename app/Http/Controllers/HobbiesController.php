@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Hobby;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Validator;
 
 class HobbiesController extends Controller
 {
@@ -17,7 +18,8 @@ class HobbiesController extends Controller
     
     public function index()
     {
-        return view('hobbies');
+        $hobby = Hobby::where('user_id', auth()->user()->id)->paginate(10);
+        return view('user-information.hobbies.index', compact('hobby'));
     }
 
     /**
@@ -27,7 +29,7 @@ class HobbiesController extends Controller
      */
     public function create()
     {
-        //
+        return view('user-information.hobbies.create');
     }
 
     
@@ -49,7 +51,7 @@ class HobbiesController extends Controller
         */
 
        // print_r($request->input());
-        if (Hobby::where('user_id', auth()->user()->id)->exists())
+       /* if (Hobby::where('user_id', auth()->user()->id)->exists())
             $hobby = Hobby::find(auth()->user()->id);
         else
             $hobby = new Hobby; 
@@ -57,8 +59,35 @@ class HobbiesController extends Controller
         $hobby->name= $request->firsthobby;
        
         $hobby->user_id = auth()->user()->id;
-        $hobby->save(); 
+        $hobby->save();
+        */ 
         
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',]
+            /*
+            'second_name' => 'required',
+            'phone_number' => 'required|min:12',
+            'email' => 'required|email',
+        ]
+        */
+        , [
+            'phone_number.min' => 'Phone number must be exactly 12 charachers format 255777111222'
+        ]);
+        $validator->validate();
+        
+        $hobby = new Hobby;
+        $hobby->name = $request->get('name');
+        /*$referees->Second_Name = $request->get('second_name');
+        $referees->Phone_Number = $request->get('phone_number');
+        $referees->Email = $request->get('email');
+        */
+        $hobby->user_id = auth()->user()->id;
+        
+        $hobby->save();
+        
+
+        return redirect()->route('hobbies.index')->with('success', 'Hobby has been added!');
     }
 
     /**
@@ -80,7 +109,11 @@ class HobbiesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $hobby = Hobby::find($id);
+        if ($hobby->user_id === auth()->user()->id)
+            return view('user-information.hobbies.edit', compact('hobby'));
+        else
+            return "Unauthorized action blocked.";
     }
 
     /**
@@ -92,7 +125,34 @@ class HobbiesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',]
+            /*
+            'second_name' => 'required',
+            'phone_number' => 'required|min:12',
+            'email' => 'required|email',
+        ],
+        
+        [
+            'phone_number.min' => 'Phone number must be exactly 12 charachers format 255777111222'
+        ]
+        */
+    );
+
+        $validator->validate();
+        
+        $hobby = Hobby::find($id);
+        if ($hobby->user_id === auth()->user()->id) {
+            $hobby->name = $request->get('name');
+           /* $referees->First_Name = $request->get('first_name');
+            $referees->Second_Name = $request->get('second_name');
+            $referees->Phone_Number = $request->get('phone_number');
+            $referees->Email = $request->get('email');
+            */
+            $hobby->save();
+        }else
+            return "Unauthorized action blocked.";
+        return redirect()->route('hobbies.index')->with('success', 'Hobby has been updated!');
     }
 
     /**
@@ -103,6 +163,11 @@ class HobbiesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $hobby = Hobby::find($id);
+        if ($hobby->user_id === auth()->user()->id)
+            Hobby::destroy($id);
+        else
+            return "Unauthorized action blocked.";
+        return redirect()->route('hobbies.index')->with('success', 'Hobby deleted.');
     }
 }
