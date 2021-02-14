@@ -18,17 +18,17 @@
                             </div> 
                             
                             <div class="form-group col-md-6">
-                                <label for="second_name">Other Names</label>
+                                <label for="second_name">Time Started </label>
                                 <input type="text" name="second_name" value="{{ old('second_name') }}" id="second_name" placeholder="Other Names" class="form-control"/>
                             </div> 
 
                             <div class="form-group col-md-6">
-                                <label for="phone_number">Phone Number</label>
+                                <label for="phone_number">Time Ended </label>
                                 <input type="text" name="phone_number" value="{{ old('phone_number') }}" id="phone_number" placeholder="Phone Number" class="form-control"/>
                             </div> 
 
                             <div class="form-group col-md-6">
-                                <label for="email">Email</label>
+                                <label for="email">Company Name and Deescription</label>
                                 <input type="email" name="email" value="{{ old('email') }}" id="email" placeholder="Email" class="form-control"/>
                             </div>
 
