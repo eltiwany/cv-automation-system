@@ -14,12 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//Route::get('/personal-information', function () {
+    //return view('/user-information/personal-information');
+//});
+Route::get('/educational-background', function () {
+    return view('/EducationBackground');
+});
+Route::get('/language', function () {
+    return view('/language');
+});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/personal-information' ,'PersonalInformationsController');
-Route::resource('/educational-background' ,'EducationBackgroundsController');
 Route::resource('/referees' ,'RefereesController');
 Route::resource('/hobbies', "HobbiesController");
-Route::post('/upload-image', 'PersonalInformationsController@upload_image');
+Route::get('/personal-information', 'PersonalInformationsController@create')->name('personal-information');
+Route::post('/educational-background','EducationBackgroundsController@store');
+Route::post('user-information/personal-information/store','PersonalInformationsController@store')->name('personal-information');
+Route::post('/language','LangauagesController@store');
+

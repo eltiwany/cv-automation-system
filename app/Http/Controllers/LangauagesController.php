@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Language;
 
 class LangauagesController extends Controller
 {
@@ -34,7 +35,10 @@ class LangauagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $z=new Language;
+        $z->name=$request->name;
+        $z->user()->associate($request->user());
+        $z->save();
     }
 
     /**

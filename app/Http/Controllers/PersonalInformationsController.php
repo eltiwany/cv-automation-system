@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Validator;
 use App\User;
 use Illuminate\Support\Facades\Storage;
+use App\PersonalInformation;
 
 class PersonalInformationsController extends Controller
 {
@@ -26,7 +27,7 @@ class PersonalInformationsController extends Controller
      */
     public function create()
     {
-        //
+        return view('user-information.personal-information');
     }
 
     /**
@@ -37,7 +38,16 @@ class PersonalInformationsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $x=new PersonalInformation;
+        $x->Email=$request->Email;
+        $x->Phone_Number=$request->Phone_Number;
+        $x->DateOf_Birth=$request->DateOf_Birth;
+        $x->Martial_Status=$request->Martial_Status;
+        $x->Gender=$request->Gender;
+        $x->Address=$request->Address;
+        $x->user()->associate($request->user());
+
+        $x->save();
     }
 
     /**

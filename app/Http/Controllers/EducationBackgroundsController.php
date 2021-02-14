@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\EducationBackGround;
 
 class EducationBackgroundsController extends Controller
 {
@@ -34,7 +35,13 @@ class EducationBackgroundsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $y=new EducationBackGround;
+        $y->name=$request->name;
+        $y->type=$request->type;
+        $y->TimeStarted=$request->TimeStarted;
+        $y->TimeEnded=$request->TimeEnded;
+        $y->user()->associate($request->user());
+        $y->save();
     }
 
     /**
