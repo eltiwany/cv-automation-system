@@ -14,7 +14,8 @@ class ProjectandResearchsController extends Controller
      */
     public function index()
     {
-        //
+        $pandr = ProjectAndResearch::where('user_id', auth()->user()->id)->paginate(10);
+        return view('user-information.projectandresearch.index', compact('pandr'));
     }
 
     /**
