@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Referee;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-use App\Referee;
-=======
+//use App\Referee;
 use Illuminate\Support\Facades\Validator;
 
->>>>>>> 70d67716384744269847bb00f80afc9098afb2ab
 class RefereesController extends Controller
 {
     /**
