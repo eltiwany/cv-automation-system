@@ -16,10 +16,10 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/project-research', function () {
+/*Route::get('/project-research', function () {
     return view('projectandresearch');
 });
-
+*/
 Route::get('/work-experince', function () {
     return view('workexperience');
 });
@@ -30,7 +30,8 @@ Route::get('/referees', function () {
 
 Auth::routes();
 
-/*Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+/*
 Route::resource('/personal-information' ,'PersonalInformationsController');
 Route::resource('/educational-background' ,'EducationalBackgroundsController');
 Route::post('/project-research', "ProjectandResearchsController@store");
