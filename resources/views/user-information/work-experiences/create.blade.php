@@ -14,22 +14,22 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="first_name">Company Name</label>
-                                <input type="text" name="first_name" value="{{ old('first_name') }}" id="first_name" placeholder="First Name" class="form-control"/>
+                                <input type="text" name="first_name" value="{{ old('first_name') }}" id="first_name" placeholder="Company Name" class="form-control"/>
                             </div> 
                             
                             <div class="form-group col-md-6">
                                 <label for="second_name">Time Started </label>
-                                <input type="text" name="second_name" value="{{ old('second_name') }}" id="second_name" placeholder="Other Names" class="form-control"/>
+                                <input type="text" name="second_name" value="{{ old('second_name') }}" id="second_name" placeholder="Time Started" class="form-control"/>
                             </div> 
 
                             <div class="form-group col-md-6">
                                 <label for="phone_number">Time Ended </label>
-                                <input type="text" name="phone_number" value="{{ old('phone_number') }}" id="phone_number" placeholder="Phone Number" class="form-control"/>
+                                <input type="text" name="phone_number" value="{{ old('phone_number') }}" id="phone_number" placeholder="Time Ended" class="form-control"/>
                             </div> 
 
                             <div class="form-group col-md-6">
                                 <label for="email">Company Name and Deescription</label>
-                                <input type="email" name="email" value="{{ old('email') }}" id="email" placeholder="Email" class="form-control"/>
+                                <input type="email" name="email" value="{{ old('email') }}" id="email" placeholder="Company Name and Deescription" class="form-control"/>
                             </div>
 
                             <div class="form-group col-md-12 mb-0">
