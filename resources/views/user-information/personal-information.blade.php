@@ -2,11 +2,14 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Personal Information</div>
+        <div class="col-md-12 p-0">
+            <div class="card shadow-custom">
+                <div class="card-header bg-custom-medium">
+                    <i class="fa fa-users header-icon"></i>
+                    Personal Information
+                </div>
 
-                <div class="card-body">
+                <div class="card-body bg-custom-light">
                     <form method="POST" action="/personal-informations/@if ($user_exist){{ $personal_information->id }}@endif">
                         @if ($user_exist) @method('PUT') @endif
                         @csrf
