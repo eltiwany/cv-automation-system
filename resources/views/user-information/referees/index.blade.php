@@ -55,7 +55,7 @@
                         </table>
                     @else
                         <p class="font-weight-bold text-center p-3">
-                            No referees found, star adding by clicking "Add New" at top left! 
+                            No referees found, start adding by clicking "Add New" at top left! 
                         </p>
                     @endif
                     {{ $referees->links() }}
