@@ -13,23 +13,23 @@
                         @csrf
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="first_name">Company Name</label>
-                                <input type="text" name="first_name" value="{{ old('first_name') }}" id="first_name" placeholder="Company Name" class="form-control"/>
+                                <label for="name">Job Title</label>
+                                <input type="text" name="name" value="{{ old('first_name') }}" id="name" placeholder="Job Title" class="form-control"/>
                             </div> 
                             
                             <div class="form-group col-md-6">
                                 <label for="second_name">Time Started </label>
-                                <input type="text" name="second_name" value="{{ old('second_name') }}" id="second_name" placeholder="Time Started" class="form-control"/>
+                                <input type="text" name="TimeStarted" value="{{ old('second_name') }}" id="TimeStarted" placeholder="Time Started" class="form-control"/>
                             </div> 
 
                             <div class="form-group col-md-6">
                                 <label for="phone_number">Time Ended </label>
-                                <input type="text" name="phone_number" value="{{ old('phone_number') }}" id="phone_number" placeholder="Time Ended" class="form-control"/>
+                                <input type="text" name="TimeEnded" value="{{ old('phone_number') }}" id="TimeEnded" placeholder="Time Ended" class="form-control"/>
                             </div> 
 
                             <div class="form-group col-md-6">
-                                <label for="email">Company Name and Deescription</label>
-                                <input type="email" name="email" value="{{ old('email') }}" id="email" placeholder="Company Name and Deescription" class="form-control"/>
+                                <label for="email">Company Name and Description</label>
+                                <input type="text" name="Description" value="{{ old('email') }}" id="Description" placeholder="Company Name and Deescription" class="form-control"/>
                             </div>
 
                             <div class="form-group col-md-12 mb-0">
