@@ -39,6 +39,8 @@ class ProjectandResearchsController extends Controller
         $pr->name= $request->projectname;
         $pr->TimeStarted= $request->timestarted;
         $pr->TimeEnded= $request->timeended;
+        $pr->user_id = auth()->user()->id;
+        $pr->save(); 
     }
 
     /**
