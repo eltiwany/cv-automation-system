@@ -65,7 +65,7 @@
           </a>
         </li>
         <li>
-          <a href="/educational-backgrounds" @if ($url === 'educational-backgrounds') class="active" @endif>
+          <a href="/education-backgrounds" @if ($url === 'education-backgrounds') class="active" @endif>
             <i class="fa fa-graduation-cap"></i>
             <span>Educational Background</span>
           </a>
@@ -83,13 +83,13 @@
           </a>
         </li>
         <li>
-          <a href="/project-researches" @if ($url === 'project-researces') class="active" @endif>
+          <a href="/project-researches" @if ($url === 'project-researches') class="active" @endif>
             <i class="fa fa-rocket"></i>
             <span>Project/Research</span>
           </a>
         </li>
         <li>
-          <a href="work-experince" @if ($url === 'work-experiences') class="active" @endif>
+          <a href="work-experiences" @if ($url === 'work-experiences') class="active" @endif>
             <i class="fa fa-suitcase"></i>
             <span>Work Experience</span>
           </a>
