@@ -3,12 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Personal Information</div>
-
-                <div class="card-body">
-                    <form method="POST" action="">
+        <div class="col-md-12 p-0">
+            <div class="card shadow-custom" >
+                <div class="card-header  h4 bg-custom-medium"></div>
+                <i class="fa fa-plus-globe header-icon"></i>
+                         Add Languages 
+                <div class="card-body bg-custom-light">
+                    <form method="POST" action="/languages">
                         @csrf
 
                         <div class="form-group row">

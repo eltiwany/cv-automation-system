@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Language;
+use Illuminate\Support\Facades\Validator;
 
 class LanguagesController extends Controller
 {
@@ -14,7 +15,8 @@ class LanguagesController extends Controller
      */
     public function index()
     {
-        //
+        $languages = Language::where('user_id', auth()->user()->id)->paginate(10);
+        return view('user-information.languages.index', compact('languages'));
     }
 
     /**
@@ -24,7 +26,7 @@ class LanguagesController extends Controller
      */
     public function create()
     {
-        //
+        return view('user-information.languages.create');
     }
 
     /**
@@ -35,10 +37,17 @@ class LanguagesController extends Controller
      */
     public function store(Request $request)
     {
-        $z=new Language;
-        $z->name=$request->name;
-        $z->user()->associate($request->user());
-        $z->save();
+        Validator::make($request->all(), [
+            'name' => 'required',
+           
+        ])->validate();
+
+        $y=new Language;
+        $y->name=$request->name;
+        $y->user()->associate($request->user());
+        $y->save();
+
+        return redirect()->route('languages.index')->with('success', 'languages Added.');
     }
 
     /**
@@ -60,7 +69,12 @@ class LanguagesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $languages = Language::find($id);
+        if ($languages->user_id === auth()->user()->id)
+            $languages = Language::find($id);
+        else
+            return "Unauthorized action blocked.";
+        return view('user-information.languages.edit', compact('languages'));
     }
 
     /**
@@ -72,7 +86,17 @@ class LanguagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Validator::make($request->all(), [
+            'name' => 'required',
+            
+        ])->validate();
+
+        $y=Language::find($id);
+        $y->name=$request->name;
+        
+        $y->save();
+
+        return redirect()->route('languages.index')->with('success', 'Languages Updated.');
     }
 
     /**
@@ -83,6 +107,11 @@ class LanguagesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $languages = Language::find($id);
+        if ($languages->user_id === auth()->user()->id)
+            Language::destroy($id);
+        else
+            return "Unauthorized action blocked.";
+        return redirect()->route('languages.index')->with('success', 'Languages deleted.');
     }
 }
