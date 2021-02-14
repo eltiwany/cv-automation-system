@@ -6,7 +6,7 @@
         <div class="col-md-12 m-0 p-0">
             <div class="card shadow-custom">
                 <div class="card-header h4 bg-custom-medium">
-                    <i class="fa fa-bloge header-icon"></i>
+                    <i class="fa fa-globe header-icon"></i>
                      Languages
                     <a href="/languages/create" class="btn btn-primary btn-sm float-right">
                         <i class="fa fa-plus-square"></i> Add Languages
@@ -18,7 +18,7 @@
                         <table class="table table-bordered table-striped table-hover">
                             <tr>
                                 <th>Name</th>
-                                
+                                <th>Actions</th>
                             </tr>
                             @foreach ($languages as $languages)
                                 <tr>
