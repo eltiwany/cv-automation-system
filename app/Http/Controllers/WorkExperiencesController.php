@@ -41,18 +41,18 @@ class WorkExperiencesController extends Controller
             'name' => 'required',
             'time_started' => 'required',
             'time_ended' => 'required',
-            'description' => 'required|email',
+            'description' => 'required',
         ])->validate();
         
         $work_experience = new WorkExperience;
         $work_experience->name = $request->get('name');
-        $work_experience->Time_Started = $request->get('time_started');
-        $work_experience->Time_Ended = $request->get('time_ended');
+        $work_experience->TimeStarted = $request->get('time_started');
+        $work_experience->TimeEnded = $request->get('time_ended');
         $work_experience->Description = $request->get('description');
         $work_experience->user_id = auth()->user()->id;
         $work_experience->save();
 
-        return redirect()->route('work_experiences.index')->with('success', 'Woek experience has been added!');
+        return redirect()->route('work-experiences.index')->with('success', 'Work experience has been added!');
     }
 
     /**
@@ -94,15 +94,15 @@ class WorkExperiencesController extends Controller
             'name' => 'required',
             'time_started' => 'required',
             'time_ended' => 'required',
-            'description' => 'required|email',
+            'Description' => 'required',
         ])->validate();
         
         $work_experience = WorkExperience::find($id);
         if ($work_experience->user_id === auth()->user()->id) {
             $work_experience->name = $request->get('name');
-            $work_experience->Time_Started = $request->get('time_started');
-            $work_experience->Time_Ended = $request->get('time_ended');
-            $work_experience->Description = $request->get('description');
+            $work_experience->TimeStarted = $request->get('time_started');
+            $work_experience->TimeEnded = $request->get('time_ended');
+            $work_experience->Description = $request->get('Description');
             $work_experience->user_id = auth()->user()->id;
             $work_experience->save();
         }else
