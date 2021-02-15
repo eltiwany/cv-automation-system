@@ -117,7 +117,7 @@
                 </a>
               </li>
               <li>
-                <a href="/create-template" @if ($url === 'create-template') class="active" @endif>
+                <a href="/templates/create" @if ($url === 'create-template') class="active" @endif>
                   <i class="fa fa-plus"></i>
                   <span>Create New Template</span>
                 </a>
