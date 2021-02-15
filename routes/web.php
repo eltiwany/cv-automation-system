@@ -31,7 +31,6 @@ Route::get('/referees', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-/*
 Route::resource('/personal-information' ,'PersonalInformationsController');
 Route::resource('/educational-background' ,'EducationalBackgroundsController');
 Route::post('/project-research', "ProjectandResearchsController@store");
