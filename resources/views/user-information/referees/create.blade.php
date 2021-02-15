@@ -6,7 +6,7 @@
         <div class="col-md-12 p-0">
             <div class="card shadow-custom">
                 <div class="card-header h4 bg-custom-medium">
-                    <i class="fa fa-plus-squre header-icon"></i>
+                    <i class="fa fa-plus-square header-icon"></i>
                     Add Referee
                 </div>
                 <div class="card-body bg-custom-light">
