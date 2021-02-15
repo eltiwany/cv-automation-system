@@ -6,31 +6,31 @@
         <div class="col-md-12 p-0">
             <div class="card m-0">
                 <div class="card-header h4 alert-default">
-                    Update Information for Referee: {{ $referee->First_Name . " "  . $referee->Second_Name}}
+                    Update Information for Work Experience: {{ $work_experience->name . " "  }}
                 </div>
                 <div class="card-body">
-                    <form action="/referees/{{ $referee->id }}" method="POST">
+                    <form action="/work-experiences/{{ $work_experience->id }}" method="POST">
                         @method('PUT')
                         @csrf
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="first_name">First Name</label>
-                                <input type="text" name="first_name" value="{{ $referee->First_Name }}" id="first_name" placeholder="First Name" class="form-control"/>
+                                <label for="name">Name</label>
+                                <input type="text" name="name" value="{{ $work_experience->name }}" id="name" placeholder="name" class="form-control"/>
                             </div> 
                             
                             <div class="form-group col-md-6">
-                                <label for="second_name">Other Names</label>
-                                <input type="text" name="second_name" value="{{ $referee->Second_Name }}" id="second_name" placeholder="Other Names" class="form-control"/>
+                                <label for="time_started">Time Started</label>
+                                <input type="text" name="time_started" value="{{ $work_experience->TimeStarted }}" id="time_started" placeholder="Time Started" class="form-control"/>
                             </div> 
 
                             <div class="form-group col-md-6">
-                                <label for="phone_number">Phone Number</label>
-                                <input type="text" name="phone_number" value="{{ $referee->Phone_Number }}" id="phone_number" placeholder="Phone Number" class="form-control"/>
+                                <label for="time_ended">Time Ended</label>
+                                <input type="text" name="time_ended" value="{{ $work_experience->TimeEnded }}" id="time_ended" placeholder=" Time Ended" class="form-control"/>
                             </div> 
 
                             <div class="form-group col-md-6">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" value="{{ $referee->Email }}" id="email" placeholder="Email" class="form-control"/>
+                                <label for="Description">Description</label>
+                                <input type="text" name="Description" value="{{ $work_experience->Description }}" id="Description" placeholder="Description" class="form-control"/>
                             </div>
 
                             <div class="form-group col-md-12 mb-0">

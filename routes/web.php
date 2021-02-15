@@ -16,10 +16,10 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/project-research', function () {
+/*Route::get('/project-research', function () {
     return view('projectandresearch');
 });
-
+*/
 Route::get('/work-experince', function () {
     return view('workexperience');
 });
@@ -31,6 +31,7 @@ Route::get('/referees', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+/*
 Route::resource('/personal-information' ,'PersonalInformationsController');
 Route::resource('/educational-background' ,'EducationalBackgroundsController');
 Route::post('/project-research', "ProjectandResearchsController@store");
@@ -43,6 +44,7 @@ Route::resource('/languages' ,'LanguagesController');
 Route::resource('/education-backgrounds' ,'EducationBackgroundsController');
 Route::resource('/referees' ,'RefereesController');
 Route::resource('/hobbies', "HobbiesController");
+Route::resource('/project-researches', "ProjectandResearchsController");
 Route::resource('/work-experiences', "WorkExperiencesController");
 Route::post('/upload-image', 'PersonalInformationsController@upload_image');
 Route::resource('/templates', 'TemplatesController');
