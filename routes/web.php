@@ -35,8 +35,6 @@ Route::resource('/personal-information' ,'PersonalInformationsController');
 Route::resource('/educational-background' ,'EducationalBackgroundsController');
 Route::post('/project-research', "ProjectandResearchsController@store");
 Route::post('/hobbies', "HobbiesController@store");
-Route::post('/work-experince', "WorkExperiencesContoller@store");
-Route::post('/referees', "RefereesController@store");
 
 Route::resource('/referees' ,'RefereesController');
 Route::resource('/hobbies', "HobbiesController");
@@ -47,3 +45,4 @@ Route::resource('/referees' ,'RefereesController');
 Route::resource('/hobbies', "HobbiesController");
 Route::resource('/work-experiences', "WorkExperiencesController");
 Route::post('/upload-image', 'PersonalInformationsController@upload_image');
+Route::resource('/templates', 'TemplatesController');
