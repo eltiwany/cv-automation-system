@@ -4,11 +4,15 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12 p-0">
-            <div class="card m-0">
+           <!-- <div class="card m-0">
                 <div class="card-header h4 alert-default">
+            -->
+            <div class="card shadow-custom">
+                <div class="card-header h4 bg-custom-medium">
+                    <i class="fa fa-check-circle header-icon"></i>
                     Update Information for Hobbies: {{ $hobby->name }}
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-custom-light">
                     <form action="/hobbies/{{ $hobby->id }}" method="POST">
                         @method('PUT')
                         @csrf
