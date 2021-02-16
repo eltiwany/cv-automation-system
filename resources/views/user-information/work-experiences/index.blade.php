@@ -4,14 +4,15 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12 m-0 p-0">
-            <div class="card">
-                <div class="card-header h4 alert-default">
+            <div class="card shadow-custom">
+                <div class="card-header h4 bg-custom-medium">
+                    <i class="fa fa-suitcase"></i>
                     Work Experiences
                     <a href="/work-experiences/create" class="btn btn-primary btn-sm float-right">
                         <i class="fa fa-plus-square"></i> Add Work Experience
                     </a>
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-custom-light">
                     
                     @if (count($work_experiences) > 0)
                         <table class="table table-bordered table-striped table-hover">
