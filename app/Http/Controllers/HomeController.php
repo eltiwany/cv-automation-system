@@ -46,7 +46,7 @@ class HomeController extends Controller
                 'url' => '/personal-informations',
                 'icon-classes' => 'fa fa-users',
                 'name' => 'Personal Information',
-                'percent' => $personal_informations->count() * 100,
+                'percent' => ($personal_informations->count() * 100) > 100 ? 100 : ($personal_informations->count() * 100),
                 'description' => 'You have filled your information, make sure they are accurately as possible!'
                 ]);
         else
@@ -65,7 +65,7 @@ class HomeController extends Controller
                 'url' => '/education-backgrounds',
                 'icon-classes' => 'fa fa-graduation-cap',
                 'name' => 'Education Background',
-                'percent' => intval($education_back_grounds->count()/3 * 100),
+                'percent' => intval($education_back_grounds->count()/3 * 100) > 100 ? 100 : intval($education_back_grounds->count()/3 * 100),
                 'description' => $education_back_grounds->count() !== 3 ? $education_back_grounds->count() . ' educational background have been added, add more to perfect your CV' : 'Everything looks good here!'
                 ]);
         else
@@ -84,7 +84,7 @@ class HomeController extends Controller
                 'url' => '/languages',
                 'icon-classes' => 'fa fa-globe',
                 'name' => 'Languages',
-                'percent' => intval($languages->count()/2 * 100),
+                'percent' => intval($languages->count()/2 * 100) > 100 ? 100 : intval($languages->count()/2 * 100),
                 'description' => $languages->count() . ' language(s) added.'
                 ]);
         else
@@ -103,7 +103,7 @@ class HomeController extends Controller
                 'url' => '/hobbies',
                 'icon-classes' => 'fa fa-smile-o',
                 'name' => 'Hobbies',
-                'percent' => intval($hobbies->count()/2 * 100),
+                'percent' => intval($hobbies->count()/2 * 100) > 100 ? 100 : intval($hobbies->count()/2 * 100),
                 'description' => $hobbies->count() . ' hobbie(s) added.'
                 ]);
         else
@@ -122,7 +122,7 @@ class HomeController extends Controller
                 'url' => '/project-researches',
                 'icon-classes' => 'fa fa-rocket',
                 'name' => 'Project and Researches',
-                'percent' => $project_and_researches->count(),
+                'percent' => ($project_and_researches->count() * 100) > 100 ? 100 : ($project_and_researches->count() * 100),
                 'description' => $project_and_researches->count() . ' project/researche(s) have been added.'
                 ]);
         else
@@ -141,7 +141,7 @@ class HomeController extends Controller
                 'url' => '/work-experiences',
                 'icon-classes' => 'fa fa-suitcase',
                 'name' => 'Work Experiences',
-                'percent' => intval($work_experiences->count()/2 * 100),
+                'percent' => intval($work_experiences->count()/2 * 100) > 100 ? 100 : intval($work_experiences->count()/2 * 100),
                 'description' => $work_experiences->count() . ' work experience(s) have been added.'
                 ]);
         else
@@ -160,7 +160,7 @@ class HomeController extends Controller
                 'url' => '/referees',
                 'icon-classes' => 'fa fa-gavel',
                 'name' => 'Referees',
-                'percent' => intval($referees->count()/2 * 100),
+                'percent' => intval($referees->count()/2 * 100) > 100 ? 100 : intval($referees->count()/2 * 100),
                 'description' => $referees->count() . ' referee(s) have been added.'
                 ]);
         else
