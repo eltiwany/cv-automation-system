@@ -11,7 +11,12 @@
                 </div>
                 <div class="card-body bg-custom-light mb-5">
                     <form action="/templates" method="POST" class="m-0 p-0 row">
-                        <div class="alert alert-info col-md-12">
+                        @csrf
+                        <div class="form-group col-md-12">
+                            <label for="name">Template Name</label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Template Name">
+                        </div>
+                        <div class="alert alert-info h5 col-md-12">
                             <div class="fa fa-slack"></div> 
                             Select Heading Style
                         </div>
@@ -19,7 +24,7 @@
                             <div class="col-md-6">
                                 <div class="shadow-custom-lg">
                                     <div class="template-enclosure-header p-3">
-                                        <input type="radio" name="header_class" value="{{ $template->header_class }}" id="header_class{{ $template->id }}">
+                                        <input type="radio" name="heading_class" value="{{ $template->heading_class }}" id="header_class{{ $template->id }}">
                                         <label for="header_class{{ $template->id }}">{{ $template->name }} </label>
                                         @include('templates.sample-header')
                                     </div>
@@ -27,8 +32,8 @@
                             </div>
                         @endforeach
                         <div class="m-3"></div>
-                        <div class="alert alert-info col-md-12">
-                            <div class="fa fa-slack"></div> 
+                        <div class="alert alert-info h5 col-md-12">
+                            <div class="fa fa-list"></div> 
                             Select Body Style
                         </div>
                         @foreach ($templates as $template)
