@@ -105,5 +105,22 @@
              @endforeach
              </div>
          @endif
+
+         {{-- Hobbies --}}
+         @if (count($hobbies) > 0)
+         <div class="section">
+             <div class="body-heading">
+                 <h4>Hobbies</h4>
+                 <div class="box-hidden">Hobbies</div>
+                 <div class="border-center"></div>
+             </div>
+             <ul>
+                 @foreach ($hobbies as $hobby)
+                     <li>{{ $hobby->name }}</li>
+                 @endforeach
+             </ul>
+             <div class="clear-both"></div>
+         </div>
+         @endif
     </div>
 @endsection
