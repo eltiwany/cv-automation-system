@@ -81,6 +81,11 @@
             document.getElementById(formID).submit();
           }
         }
+
+        function enableScroll(divID) {
+            document.getElementById(divID).style.overflowY = 'scroll';
+            document.getElementById(divID).style.cursor = 'default';
+        }
     </script>
 </body>
 </html>
