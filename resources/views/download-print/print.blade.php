@@ -160,5 +160,49 @@
              @endforeach
              </div>
          @endif
+
+         {{-- Personal Information --}}
+         <?php $count = count($referees); $i = 0; ?>
+         @if (count($referees) > 0)
+         <div class="section">
+             <div class="body-heading">
+                 <h4>Personal Information</h4>
+                 <div class="box-hidden">Personal Information</div>
+                 <div class="border-center"></div>
+             </div>
+             <table class="table table-borderless mt-0">
+                 <tr>
+                     <th>Full Name:</th>
+                     <td>{{ auth()->user()->first_name }} {{ auth()->user()->middle_name }} {{ auth()->user()->last_name }}</td>
+                 </tr>
+                 @if ($user_exist)
+                     <tr>
+                         <th>Date of Birth:</th>
+                         <td>{{ $personal_information->DateOf_Birth }}</td>
+                     </tr>
+                     <tr>
+                         <th>Gender:</th>
+                         <td>{{ $personal_information->Gender }}</td>
+                     </tr>
+                     <tr>
+                         <th>Address:</th>
+                         <td>{{ $personal_information->Address }}</td>
+                     </tr>
+                     <tr>
+                         <th>Marital Status:</th>
+                         <td>{{ $personal_information->Marital_Status }}</td>
+                     </tr>
+                     <tr>
+                         <th>Email:</th>
+                         <td>{{ $personal_information->Email }}</td>
+                     </tr>
+                     <tr>
+                         <th>Phone Number:</th>
+                         <td>{{ $personal_information->Phone_Number }}</td>
+                     </tr>
+                 @endif
+             </table>
+             </div>
+         @endif
     </div>
 @endsection
