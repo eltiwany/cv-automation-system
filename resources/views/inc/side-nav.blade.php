@@ -110,9 +110,15 @@
           </a>
         </li>
         <li>
-          <a href="/templates/create" @if ($url === 'create-template') class="active" @endif>
+          <a href="/templates/create" @if ($url === 'create') class="active" @endif>
             <i class="fa fa-plus"></i>
             <span>Create New Template</span>
+          </a>
+        </li>
+        <li>
+          <a href="/user-templates" @if ($url === 'user-templates') class="active" @endif>
+            <i class="fa fa-heart"></i>
+            <span>My Templates</span>
           </a>
         </li>
         <li class="header-menu">
