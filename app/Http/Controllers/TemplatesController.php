@@ -21,6 +21,10 @@ class TemplatesController extends Controller
      */
     public function index()
     {
+        return $this->get_all_data("templates.index");
+    }
+
+    public function get_all_data($return_route) {
         $user_id = auth()->user()->id;
         $user_exist = false;
         if (PersonalInformation::where('user_id', $user_id)->exists()) {
@@ -37,7 +41,7 @@ class TemplatesController extends Controller
         $referees = Referee::where('user_id', auth()->user()->id)->get();
         $templates = Template::all();
 
-        return view("templates.index", compact(
+        return view($return_route, compact(
             'personal_information',
             'user_exist', 
             'education_backgrounds',
@@ -57,7 +61,7 @@ class TemplatesController extends Controller
      */
     public function create()
     {
-        //
+        return $this->get_all_data("templates.create");
     }
 
     /**
