@@ -122,5 +122,22 @@
              <div class="clear-both"></div>
          </div>
          @endif
+
+         {{-- Languages --}}
+         @if (count($languages) > 0)
+         <div class="section">
+             <div class="body-heading">
+                 <h4>Languages</h4>
+                 <div class="box-hidden">Languages</div>
+                 <div class="border-center"></div>
+             </div>
+             <ul>
+                 @foreach ($languages as $language)
+                     <li>{{ $language->name }}</li>
+                 @endforeach
+             </ul>
+             <div class="clear-both"></div>
+         </div>
+         @endif
     </div>
 @endsection
