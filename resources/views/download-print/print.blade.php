@@ -61,6 +61,28 @@
             </div>
         @endif
 
-        
+         {{-- Work Experiences --}}
+         <?php $count = count($work_experiences); $i = 0; ?>
+         @if (count($work_experiences) > 0)
+         <div class="section">
+             <div class="body-heading">
+                 <h4>Work Experience</h4>
+                 <div class="box-hidden">Work Experience</div>
+                 <div class="border-center"></div>
+             </div>
+             @foreach ($work_experiences as $work_experience)
+                 <?php ++$i ?>
+                 <p class="half-width">
+                     {{ $work_experience->name }}<br/>
+                     {{ $work_experience->TimeStarted }} - {{ $work_experience->TimeEnded }}<br/>
+                 </p>
+                 <p class="half-width">
+                     {{ $work_experience->Description }}
+                 </p>
+                 <div class="clear-both"></div>
+                 @if ($count !== $i) <br/><br/> @endif
+             @endforeach
+             </div>
+         @endif
     </div>
 @endsection
