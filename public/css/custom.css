@@ -118,6 +118,18 @@ footer a {
     border-radius: 0 !important;
 }
 
+.w-content {
+    width: fit-content !important;
+}
+
+.p {
+    font-size: 15px !important;
+}
+
+.float-right {
+    float: right !important;
+}
+ 
 /* 
     Template Styles
     Define another template with heading 
@@ -127,7 +139,8 @@ footer a {
 .template-enclosure {   
     border-bottom: 0 !important;
     height: 500px !important;
-    overflow-y: scroll;
+    overflow-y: hidden;
+    cursor: pointer;
 }
 
 .container-print {
@@ -450,4 +463,105 @@ footer a {
 
 .clear-both {
     clear: both;
+}
+
+
+/*  ----------------------------------------------------------------------  */
+
+
+/* 
+    Template 4
+*/
+
+.header-paper4 {
+    background-color: white;
+}
+
+.header-paper4 .img-profile p {
+    display: none;
+}
+
+.header-paper4 .heading {
+    padding-top: 0px !important;
+    height: 50px;
+}
+
+.header-paper4 .heading h2 {
+    font-family: 'Arial', Times, serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+    line-height: 1.5 !important;
+}
+
+.header-paper4 .heading p {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.body-paper4 .body-heading {
+    margin-bottom: 20px !important;
+    border-top: 1px solid gray !important;
+    padding-top: 20px !important;
+}
+
+.body-paper4 {
+    margin-top: 25px !important;
+    padding: 20px !important;
+    padding-top: 0 !important;
+}
+
+.body-paper4 h4 {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    position: relative;
+    top: 0;
+    font-size: 14pt;
+    width: fit-content;
+    text-transform: uppercase;
+    z-index: 1000 !important;
+}
+
+
+.body-paper4 .border-center {
+    display: none;
+}
+
+.body-paper4 .box-hidden {
+    display: none;
+}
+
+.body-paper4 p, .body-paper1 ul, .body-paper1 table {
+    font-family: 'Arial', sans-serif;
+    margin-top: -15px !important;
+}
+
+.body-paper4 table tr td, .body-paper1 table tr th {
+    padding:  5px !important;
+    padding-left: 0 !important;
+}
+
+.body-paper4 .full-width {
+    width: 100% !important;
+}
+
+.body-paper4 .half-width {
+    width: 50% !important;
+    float: left;
+}
+
+.body-paper4 .border-right {
+    border-right: 1px solid darkcyan;
+}
+
+
+.clear-both {
+    clear: both;
+}
+
+.recommended {
+    font-size: 14px !important;
+    text-align: right;
+    padding: 5px !important;
+    margin: 0 !important;
 }
