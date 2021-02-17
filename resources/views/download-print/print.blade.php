@@ -84,5 +84,26 @@
              @endforeach
              </div>
          @endif
+
+         {{-- Project and Reaserches --}}
+         <?php $count = count($project_researches); $i = 0; ?>
+         @if (count($project_researches) > 0)
+         <div class="section">
+             <div class="body-heading">
+                 <h4>Project And Researches</h4>
+                 <div class="box-hidden">Project And Researches</div>
+                 <div class="border-center"></div>
+             </div>
+             @foreach ($project_researches as $project_research)
+                 <?php ++$i ?>
+                 <p class="full-width">
+                     {{ $project_research->name }}<br/>
+                     {{ $project_research->TimeStarted }} - {{ $project_research->TimeEnded }}<br/>
+                 </p>
+                 <div class="clear-both"></div>
+                 @if ($count !== $i) <br/><br/> @endif
+             @endforeach
+             </div>
+         @endif
     </div>
 @endsection
