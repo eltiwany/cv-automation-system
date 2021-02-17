@@ -16,17 +16,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-/*Route::get('/project-research', function () {
-    return view('projectandresearch');
-});
-*/
-Route::get('/work-experince', function () {
-    return view('workexperience');
-});
 
-Route::get('/referees', function () {
-    return view('referees');
-});
 
 Auth::routes();
 
