@@ -2,6 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\EducationBackGround;
+use App\Hobby;
+use App\Language;
+use App\PersonalInformation;
+use App\ProjectAndResearch;
+use App\Referee;
+use App\Template;
+use App\WorkExperience;
 use Illuminate\Http\Request;
 
 class TemplatesController extends Controller
@@ -13,7 +21,33 @@ class TemplatesController extends Controller
      */
     public function index()
     {
-        //
+        $user_id = auth()->user()->id;
+        $user_exist = false;
+        if (PersonalInformation::where('user_id', $user_id)->exists()) {
+            $user_exist = true;
+            $personal_information = PersonalInformation::where('user_id', $user_id)->first();
+        }else 
+            $personal_information = [];
+        
+        $education_backgrounds = EducationBackGround::where('user_id', auth()->user()->id)->get();
+        $work_experiences = WorkExperience::where('user_id', auth()->user()->id)->get();
+        $project_researches = ProjectAndResearch::where('user_id', auth()->user()->id)->get();
+        $hobbies = Hobby::where('user_id', auth()->user()->id)->get();
+        $languages = Language::where('user_id', auth()->user()->id)->get();
+        $referees = Referee::where('user_id', auth()->user()->id)->get();
+        $templates = Template::all();
+
+        return view("templates.index", compact(
+            'personal_information',
+            'user_exist', 
+            'education_backgrounds',
+            'work_experiences',
+            'project_researches',
+            'hobbies',
+            'languages',
+            'referees',
+            'templates'
+        ));
     }
 
     /**
