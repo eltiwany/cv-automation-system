@@ -38,5 +38,29 @@
             </div>
             <p class="full-width">A summary is a brief statement or restatement of main points, especially as a conclusion to a work: a summary of a chapter. A brief is a detailed outline, by heads ...</p>
         </div>
+
+        {{-- Education Background --}}
+        <?php $count = count($education_backgrounds); $i = 0; ?>
+        @if (count($education_backgrounds) > 0)
+        <div class="section">
+            <div class="body-heading">
+                <h4>Education Background</h4>
+                <div class="box-hidden">Education Background</div>
+                <div class="border-center"></div>
+            </div>
+            @foreach ($education_backgrounds as $education_background)
+                <?php ++$i ?>
+                <p class="full-width">
+                    {{ $education_background->name }}<br/>
+                    <strong>{{ $education_background->type }}</strong><br/>
+                    {{ $education_background->TimeStarted }} - {{ $education_background->TimeEnded }}<br/>
+                </p>
+                <div class="clear-both"></div>
+                @if ($count !== $i) <br/><br/> @endif
+            @endforeach
+            </div>
+        @endif
+
+        
     </div>
 @endsection
