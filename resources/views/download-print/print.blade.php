@@ -139,5 +139,26 @@
              <div class="clear-both"></div>
          </div>
          @endif
+
+         {{-- Referees --}}
+         <?php $count = count($referees); $i = 0; ?>
+         @if (count($referees) > 0)
+         <div class="section">
+             <div class="body-heading">
+                 <h4>Referees</h4>
+                 <div class="box-hidden">Referees</div>
+                 <div class="border-center"></div>
+             </div>
+             @foreach ($referees as $referee)
+                 <?php ++$i ?>
+                 <p class="full-width">
+                     {{ $referee->First_Name }} {{ $referee->Second_Name }}<br/>
+                     <strong>{{ $referee->Email }} | {{ $referee->Phone_Number }}</strong><br/>
+                 </p>
+                 <div class="clear-both"></div>
+                 @if ($count !== $i) <br/><br/> @endif
+             @endforeach
+             </div>
+         @endif
     </div>
 @endsection
