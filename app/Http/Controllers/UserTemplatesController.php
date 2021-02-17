@@ -119,6 +119,11 @@ class UserTemplatesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user_template = UserTemplate::find($id);
+        if ($user_template->user_id === auth()->user()->id)
+            UserTemplate::destroy($id);
+        else
+            return "Unauthorized action blocked.";
+        return redirect()->route('user-templates.index')->with('success', 'Template deleted.');
     }
 }
