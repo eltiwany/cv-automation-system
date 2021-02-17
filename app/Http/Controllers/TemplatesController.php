@@ -101,12 +101,13 @@ class TemplatesController extends Controller
                 'user_id' => auth()->user()->id
             ])->update(['is_selected' => false]);
 
-            $$user_template = UserTemplate::where([
+            $user_template = UserTemplate::where([
                 'name' => $request->get('name'),
                 'selected_heading_class' => $request->get('heading_class'),
                 'selected_body_class' => $request->get('body_class')
             ])->first();
             $user_template->is_selected = true;
+            $user_template->save();
         }
 
         return redirect()->route('user-templates.index')->with('success', 'Template has been saved.');
