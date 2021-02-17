@@ -13,7 +13,7 @@
                         Click and Scroll to Preview
                     </div>
                 </div>
-                <div class="card-body bg-custom-light row">
+                <div class="card-body bg-custom-light row mb-5">
                     <div class="alert alert-info p-2 mb-2 w-content font-weight-bold p col-md-12">
                         <i class="fa fa-exclamation-circle"></i>
                         Default template can be directly printed/downloaded from side navigation
