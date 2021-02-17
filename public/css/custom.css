@@ -109,3 +109,132 @@ footer a {
     padding-right: 10px !important;
     border-right: 2px solid rgb(84, 134, 167) !important;
 }
+
+/* 
+    Template Styles
+    Define another template with heading 
+    (.header-n), (.body-n) where n is your defined style for your custom template
+*/
+
+.container-print {
+    padding: 20px !important;
+}
+
+.custom-paper {
+    background-color: white !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: 2px 2px 5px gray !important;
+}
+
+.m-auto {
+    margin: auto !important;
+}
+
+/* 
+    Template 1
+*/
+
+.header-paper1 {
+    background-color: rgb(225, 247, 255) !important;
+    border-bottom: 3px solid rgb(5, 184, 255);
+}
+
+.header-paper1 .img-profile p {
+    text-align: center;
+}
+
+.header-paper1 .img-profile p img {
+    width: 80px !important;
+    height: 80px !important;
+    border: 1px solid white;
+    border-radius: 80px;
+    background-color: whitesmoke;
+}
+
+.header-paper1 .heading {
+    padding-top: 10px !important;
+}
+
+.header-paper1 .heading h2 {
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+    line-height: 0.5 !important;
+}
+
+.header-paper1 .heading p {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.body-heading {
+    margin-bottom: 20px !important;
+}
+
+.body-paper1 {
+    margin-top: 25px !important;
+    padding: 20px !important;
+    padding-top: 0 !important;
+}
+
+.body-paper1 h4 {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    position: relative;
+    top: 0;
+    font-size: 14pt;
+    width: fit-content;
+    text-transform: uppercase;
+    z-index: 1000 !important;
+}
+
+
+.body-paper1 .border-center {
+    border-bottom: 1px solid black;
+    position: relative;
+    top: -55px !important;
+    z-index: 2 !important;
+}
+
+.body-paper1 .box-hidden {
+    font-family: 'Arial', sans-serif;
+    width: fit-content;
+    font-size: 14pt;
+    text-transform: uppercase;
+    color: white;
+    background-color: white;
+    position: relative;
+    top: -45px;
+    height: 35px;
+    padding-right: 15px !important;
+    z-index: 10 !important;
+}
+
+.body-paper1 p, .body-paper1 ul, .body-paper1 table {
+    font-family: 'Arial', sans-serif;
+    margin-top: -50px !important;
+}
+
+.body-paper1 table tr td, .body-paper1 table tr th {
+    padding:  5px !important;
+    padding-left: 0 !important;
+}
+
+.body-paper1 .full-width {
+    width: 100% !important;
+}
+
+.body-paper1 .half-width {
+    width: 50% !important;
+    float: left;
+}
+
+.body-paper1 .border-right {
+    border-right: 1px solid darkcyan;
+}
+
+.clear-both {
+    clear: both;
+}
