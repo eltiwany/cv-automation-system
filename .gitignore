@@ -3,5 +3,4 @@ vendor/
 node_modules/
 .env
 .ed_env
-.env
 public/storage
