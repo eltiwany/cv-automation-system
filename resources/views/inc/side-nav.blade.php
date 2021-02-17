@@ -103,60 +103,32 @@
         <li class="header-menu">
           <span>Select/Create Template</span>
         </li>
-        <li class="sidebar-dropdown">
-          <a href="#">
-            <i class="fa fa-certificate"></i>
-            <span>CV Templates</span>
+        <li>
+          <a href="/templates" @if ($url === 'templates') class="active" @endif>
+            <i class="fa fa-folder"></i>
+            <span>Choose from Selection</span>
           </a>
-          <div class="sidebar-submenu">
-            <ul>
-              <li>
-                <a href="/templates" @if ($url === 'templates') class="active" @endif>
-                  <i class="fa fa-folder"></i>
-                  <span>Choose from Selection</span>
-                </a>
-              </li>
-              <li>
-                <a href="/templates/create" @if ($url === 'create-template') class="active" @endif>
-                  <i class="fa fa-plus"></i>
-                  <span>Create New Template</span>
-                </a>
-              </li>
-              
-            </ul>
-          </div>
+        </li>
+        <li>
+          <a href="/templates/create" @if ($url === 'create-template') class="active" @endif>
+            <i class="fa fa-plus"></i>
+            <span>Create New Template</span>
+          </a>
         </li>
         <li class="header-menu">
           <span>Download/Print</span>
         </li>
-        <li class="sidebar-dropdown">
-          <a href="#">
-            <i class="fa fa-print"></i>
-            <span>Downloads/Print</span>
+        <li>
+          <a href="download-pdf" @if ($url === 'download-pdf') class="active" @endif>
+            <i class="fa fa-file-pdf-o"></i>
+            <span>Download as PDF</span>
           </a>
-          <div class="sidebar-submenu">
-            <ul>
-              <li>
-                <a href="/download-word" @if ($url === 'download-word') class="active" @endif>
-                  <i class="fa fa-file-word-o"></i>
-                  <span>Download as Word</span>
-                </a>
-              </li>
-              <li>
-                <a href="download-pdf" @if ($url === 'download-pdf') class="active" @endif>
-                  <i class="fa fa-file-pdf-o"></i>
-                  <span>Download as PDF</span>
-                </a>
-              </li>
-              <li>
-                <a href="print" @if ($url === 'print') class="active" @endif>
-                  <i class="fa fa-print"></i>
-                  <span>Print CV</span>
-                </a>
-              </li>
-              
-            </ul>
-          </div>
+        </li>
+        <li>
+          <a href="print" @if ($url === 'print') class="active" @endif>
+            <i class="fa fa-print"></i>
+            <span>Print CV</span>
+          </a>
         </li>
   </div>
 </nav>
