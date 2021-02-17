@@ -18,24 +18,39 @@ class CreateTemplatesTable extends Migration
             $table->increments('id');
             $table->string('heading_class');
             $table->string('body_class');
+            $table->string('name');
+            $table->boolean('is_recommended')->default(false);
             $table->timestamps();
         });
 
         DB::table('templates')->insert([
             [
                 'id' => 1,
+                'name' => 'Professional',
                 'heading_class' => 'header-paper1',
-                'body_class' => 'body-paper1'
+                'body_class' => 'body-paper1',
+                'is_recommended' => true
             ],
             [
                 'id' => 2,
+                'name' => 'Professional Red',
                 'heading_class' => 'header-paper2',
-                'body_class' => 'body-paper2'
+                'body_class' => 'body-paper2',
+                'is_recommended' => false
             ],
             [
                 'id' => 3,
+                'name' => 'Basic Black',
                 'heading_class' => 'header-paper3',
-                'body_class' => 'body-paper3'
+                'body_class' => 'body-paper3',
+                'is_recommended' => false
+            ],
+            [
+                'id' => 4,
+                'name' => 'Basic',
+                'heading_class' => 'header-paper4',
+                'body_class' => 'body-paper4',
+                'is_recommended' => false
             ]
         ]);
     }
