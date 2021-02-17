@@ -11,7 +11,7 @@
                     <div class="alert alert-warning p-1 m-0 w-content font-weight-bold p float-right">
                         <i class="fa fa-lightbulb-o"></i>
                         Click and Scroll to Preview
-                    </div> 
+                    </div>
                 </div>
                 <div class="card-body bg-custom-light row">
                     @foreach ($templates as $template)
@@ -26,12 +26,17 @@
                                         </label>
                                     @endif
                                 </div>
-                            <div class="template-enclosure" id="enclosure-{{ $template->id }}" onclick="enableScroll('enclosure-{{ $template->id }}')">
-                                @include('templates.sample-cv')
+                                <div class="template-enclosure" id="enclosure-{{ $template->id }}" onclick="enableScroll('enclosure-{{ $template->id }}')">
+                                    @include('templates.sample-cv')
+                                </div>
+                                <form action="/templates" method="POST" class="m-0 p-0">
+                                    @csrf
+                                    <input type="hidden" name="name" value="{{ $template->name }}">
+                                    <input type="hidden" name="heading_class" value="{{ $template->heading_class }}">
+                                    <input type="hidden" name="body_class" value="{{ $template->body_class }}">
+                                    <button class="btn btn-primary btn-block border-radius-0 mb-3"><i class="fa fa-mouse-pointer"></i> Select Template</button>
+                                </form>
                             </div>
-                            <button class="btn btn-primary btn-block border-radius-0 mb-3"><i class="fa fa-mouse-pointer"></i> Select Template</button>
-                            </div>
-                            
                         </div>
                     @endforeach
                     
