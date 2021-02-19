@@ -20,7 +20,7 @@
                     </div>
                     @if (count($user_templates) > 0)
                         @foreach ($user_templates as $user_template)
-                            <div class="col-md-6">
+                            <div class="col-md-6 mb-4">
                                 <div class="shadow-custom-lg">
                                     <div class="bg-custom-medium p-2 text-center h4">
                                         {{ $user_template->name }}
