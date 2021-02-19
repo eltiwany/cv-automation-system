@@ -13,6 +13,7 @@ use App\UserTemplate;
 use App\WorkExperience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use PDF;
 
 class UserTemplatesController extends Controller
 {
@@ -138,7 +139,7 @@ class UserTemplatesController extends Controller
             return redirect()->route('user-templates.index')->with('error', 'Please create a template or choose from predefined templates to use print/download functions');
     }
 
-    public function pdf($id) {
+    public function download() {
         $user_templates = UserTemplate::where(['user_id' => auth()->user()->id, 'is_selected' => true]);
         if($user_templates->exists()) {
             $user_template = UserTemplate::where(['user_id' => auth()->user()->id, 'is_selected' => true])->first();
@@ -156,7 +157,7 @@ class UserTemplatesController extends Controller
             $hobbies = Hobby::where('user_id', auth()->user()->id)->get();
             $languages = Language::where('user_id', auth()->user()->id)->get();
             $referees = Referee::where('user_id', auth()->user()->id)->get();
-                $pdf = PDF::loadView('download-print.print', compact(
+                $pdf = '\PDF'::loadView('download-print.print', compact(
                     'personal_information',
                     'user_exist', 
                     'education_backgrounds',
