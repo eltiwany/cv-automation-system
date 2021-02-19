@@ -38,3 +38,5 @@ Route::resource('/work-experiences', "WorkExperiencesController");
 Route::post('/upload-image', 'PersonalInformationsController@upload_image');
 Route::resource('/templates', 'TemplatesController');
 Route::resource('/user-templates', 'UserTemplatesController');
+Route::get('/print', 'UserTemplatesController@print');
+Route::get('/download-pdf', 'UserTemplatesController@download');
