@@ -10,14 +10,19 @@ use Illuminate\Support\Facades\Validator;
 class RefereesController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Create a new controller instance.
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
     public function __construct()
     {
         $this->middleware('auth');
     }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $referees = Referee::where('user_id', auth()->user()->id)->paginate(10);
