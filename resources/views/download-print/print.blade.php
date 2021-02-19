@@ -7,11 +7,11 @@
             <div class="img-profile">
                 @if (!empty(auth()->user()->logo_url))
                     <p>    
-                        <img src="{{ asset('storage/profile_images/' . auth()->user()->logo_url) }}"> 
+                        <img src="storage/profile_images/{{ auth()->user()->logo_url }}"> 
                     </p>
                 @else
                     <p>
-                        <img src="{{ asset('storage/profile_images/default.png') }}"> 
+                        <img src="storage/profile_images/default.png"> 
                     </p>
                 @endif
             </div>
