@@ -209,5 +209,15 @@
 @endsection
 
 <script>
-    window.print();
+
+    setTimeout( () => { 
+        window.print(); 
+    }, 500);
+
+    window.onafterprint = () => { 
+        setTimeout( () => { 
+            window.history.back(); 
+        }, 500);
+    }
+    
 </script>
