@@ -207,3 +207,7 @@
     </div>
 </div>
 @endsection
+
+<script>
+    window.print();
+</script>
