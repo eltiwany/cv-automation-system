@@ -129,11 +129,47 @@ class UserTemplatesController extends Controller
     }
 
     public function print() {
-            $user_templates = UserTemplate::where(['user_id' => auth()->user()->id, 'is_selected' => true]);
+        $user_templates = UserTemplate::where(['user_id' => auth()->user()->id, 'is_selected' => true]);
         if($user_templates->exists()) {
             $user_template = UserTemplate::where(['user_id' => auth()->user()->id, 'is_selected' => true])->first();
             return $this->get_all_user_data('download-print.print', $user_template, true);
         }
+        else
+            return redirect()->route('user-templates.index')->with('error', 'Please create a template or choose from predefined templates to use print/download functions');
+    }
+
+    public function pdf($id) {
+        $user_templates = UserTemplate::where(['user_id' => auth()->user()->id, 'is_selected' => true]);
+        if($user_templates->exists()) {
+            $user_template = UserTemplate::where(['user_id' => auth()->user()->id, 'is_selected' => true])->first();
+            $user_id = auth()->user()->id;
+            $user_exist = false;
+            if (PersonalInformation::where('user_id', $user_id)->exists()) {
+                $user_exist = true;
+                $personal_information = PersonalInformation::where('user_id', $user_id)->first();
+            }else
+                $personal_information = [];
+            
+            $education_backgrounds = EducationBackGround::where('user_id', auth()->user()->id)->get();
+            $work_experiences = WorkExperience::where('user_id', auth()->user()->id)->get();
+            $project_researches = ProjectAndResearch::where('user_id', auth()->user()->id)->get();
+            $hobbies = Hobby::where('user_id', auth()->user()->id)->get();
+            $languages = Language::where('user_id', auth()->user()->id)->get();
+            $referees = Referee::where('user_id', auth()->user()->id)->get();
+                $pdf = PDF::loadView('download-print.print', compact(
+                    'personal_information',
+                    'user_exist', 
+                    'education_backgrounds',
+                    'work_experiences',
+                    'project_researches',
+                    'hobbies',
+                    'languages',
+                    'referees',
+                    'user_template'
+                    ))->setPaper('a4', 'portrait');
+                return $pdf->download('cirriculum-vitae.pdf');
+                //return $this->get_all_user_data('download-print.print', $user_template, true);
+            }
         else
             return redirect()->route('user-templates.index')->with('error', 'Please create a template or choose from predefined templates to use print/download functions');
     }
