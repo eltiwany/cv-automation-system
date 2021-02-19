@@ -4,9 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12 p-0">
-            <div class="card">
-                <div class="card-header h4 alert-default">Hi {{ auth()->user()->first_name }}, here is your progress!</div>
-                <div class="card-body">
+            <div class="card shadow-custom">
+                <div class="card-header h4 bg-custom-medium">
+                    <i class="fa fa-dashboard header-icon"></i> 
+                    Hi {{ auth()->user()->first_name }}, here is your progress!
+                </div>
+                <div class="card-body bg-custom-light">
                     <div class="row m-0 p-0">
                     <?php $i = 0; ?>
                     @foreach ($stats as $stat)
