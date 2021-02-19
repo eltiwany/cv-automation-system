@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-print">
     <div class="custom-paper m-auto" id="cv">
-        <div class="header-paper1 p-3">
+        <div class="{{ $user_template->heading_class }} p-3">
             <div class="img-profile">
                 @if (!empty(auth()->user()->logo_url))
                     <p>    
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="body-paper1">
+        <div class="{{ $user_template->body_class }}">
 
             {{-- Summary about yourself --}}
             <div class="section">
