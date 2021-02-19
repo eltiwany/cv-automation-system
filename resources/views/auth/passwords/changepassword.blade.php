@@ -22,8 +22,8 @@
                     <form class="form-horizontal" method="POST" action="{{ route('changePassword') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('current-password') ? ' has-error' : '' }}">
-                            <label for="new-password" class="col-md-4 control-label">Current Password</label>
+                        <div class="form-group row{{ $errors->has('current-password') ? ' has-error' : '' }}">
+                            <label for="new-password" class="col-md-4 col-form-label text-md-right">Current Password</label>
 
                             <div class="col-md-6">
                                 <input id="current-password" type="password" class="form-control" name="current-password" required>
@@ -36,8 +36,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('new-password') ? ' has-error' : '' }}">
-                            <label for="new-password" class="col-md-4 control-label">New Password</label>
+                        <div class="form-group row{{ $errors->has('new-password') ? ' has-error' : '' }}">
+                            <label for="new-password" class="col-md-4 col-form-label text-md-right">New Password</label>
 
                             <div class="col-md-6">
                                 <input id="new-password" type="password" class="form-control" name="new-password" required>
@@ -50,16 +50,16 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="new-password-confirm" class="col-md-4 control-label">Confirm New Password</label>
+                        <div class="form-group row">
+                            <label for="new-password-confirm" class="col-md-4 col-form-label text-md-right">Confirm New Password</label>
 
                             <div class="col-md-6">
                                 <input id="new-password-confirm" type="password" class="form-control" name="new-password_confirmation" required>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                        <div class="form-group row  mb-0">
+                            <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     Change Password
                                 </button>
