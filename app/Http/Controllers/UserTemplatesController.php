@@ -23,10 +23,10 @@ class UserTemplatesController extends Controller
      */
     public function index()
     {
-        return $this->get_all_user_data('user-templates.index');
+        return $this->get_all_user_data('user-templates.index', [], false);
     }
 
-    public function get_all_user_data($return_route) {
+    public function get_all_user_data($return_route, $user_template, $enable_user_template) {
         $user_id = auth()->user()->id;
         $user_exist = false;
         if (PersonalInformation::where('user_id', $user_id)->exists()) {
@@ -52,7 +52,8 @@ class UserTemplatesController extends Controller
             'hobbies',
             'languages',
             'referees',
-            'user_templates'
+            'user_templates',
+            'user_template'
         ));
     }
 
@@ -125,5 +126,15 @@ class UserTemplatesController extends Controller
         else
             return "Unauthorized action blocked.";
         return redirect()->route('user-templates.index')->with('success', 'Template deleted.');
+    }
+
+    public function print() {
+            $user_templates = UserTemplate::where(['user_id' => auth()->user()->id, 'is_selected' => true]);
+        if($user_templates->exists()) {
+            $user_template = UserTemplate::where(['user_id' => auth()->user()->id, 'is_selected' => true])->first();
+            return $this->get_all_user_data('download-print.print', $user_template, true);
+        }
+        else
+            return redirect()->route('user-templates.index')->with('error', 'Please create a template or choose from predefined templates to use print/download functions');
     }
 }
