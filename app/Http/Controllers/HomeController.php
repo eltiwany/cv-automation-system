@@ -10,8 +10,7 @@ use App\Language;
 use App\ProjectAndResearch;
 use App\Referee;
 use App\WorkExperience;
-use Hash;
-use Auth;
+
 class HomeController extends Controller
 {
     /**

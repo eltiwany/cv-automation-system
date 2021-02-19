@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Hash;
+use Auth;
 use Illuminate\Http\Request;
 
 class changepasswordController extends Controller
@@ -10,7 +11,7 @@ class changepasswordController extends Controller
     public function showChangePasswordForm(){
         
         //return "noah";
-        return view('authchange');
+        return view('auth.passwords.changepassword');
     }
 
 
