@@ -9,12 +9,9 @@
 
     <title>{{ config('app.name', 'Cv Automation') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <?php 
         $full_url = url()->current();
         $break_url = explode('/', $full_url);
