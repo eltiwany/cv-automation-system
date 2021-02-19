@@ -40,8 +40,8 @@
                                         </form>
                                     @endif
 
-                                    <button class="btn btn-warning border-radius-0"><i class="fa fa-print"></i> Print</button>
-                                    <button class="btn btn-success border-radius-0"><i class="fa fa-download"></i> Download as PDF</button>
+                                    <a class="btn btn-warning border-radius-0" href="/print?template_id={{ $user_template->id }}"><i class="fa fa-print"></i> Print</a>
+                                    <a class="btn btn-success border-radius-0" href="/download-pdf?template_id={{ $user_template->id }}"><i class="fa fa-download"></i> Download as PDF</a>
                                     <form id="form{{ $user_template->id }}" action="/user-templates/{{ $user_template->id }}" method="POST" class="form-button">
                                         @method('DELETE')
                                         {{ csrf_field() }}
