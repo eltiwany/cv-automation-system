@@ -25,6 +25,9 @@ Route::resource('/personal-information' ,'PersonalInformationsController');
 Route::resource('/educational-background' ,'EducationalBackgroundsController');
 Route::post('/project-research', "ProjectandResearchsController@store");
 Route::post('/hobbies', "HobbiesController@store");
+Route::get('/change','changepasswordController@showChangePasswordForm');
+Route::post('/changePassword','changepasswordController@changePassword')->name('changePassword');
+
 
 Route::resource('/referees' ,'RefereesController');
 Route::resource('/hobbies', "HobbiesController");
