@@ -33,7 +33,8 @@ The proposed system will enables graduates, unemployed or any person who wish to
 
 --------------------
 ### INSTALLATION REQUIREMENTS:
-In order to install this system on your computer you need to have the following dependencies.
+CAS system is based on Laravel Framework 5.8, to install it on your computer you need to have the following dependencies.
+1. All laravel 5.8 dependencies (found on https://laravel.com/docs/5.8) or simply install LAMP stack (prefferebly XAMPP) with PHP >= 7.1.3
 1. Composer (download on https://getcomposer.org/ or run `sudo apt install composer` on debian based linux)
 1. NodeJS (download on https://nodejs.org/en/download/ or run `sudo apt install nodejs npm` on debian based linux)
 1. Any relational DBMS (MySQL is preffered)
@@ -44,8 +45,8 @@ For unexperienced users, please follow each step clearly and do not skip any ste
 
 1. Clone repository using command `git clone https://github.com/eltiwany/CS335-CV-AUTOMATION-SYSTEM.git`
 1. Change path to repository folder by typing `cd CS335-CV-AUTOMATION-SYSTEM`
-1. Install node modules by typing `npm install`
-1. Install laravel vendor by typing `composer install`
+1. Install npm dependencies on node_modules directory by typing `npm install`
+1. Install composer dependencies on vendor directory by typing `composer install`
 1. Create database on your DBMS with name `cv-automation` or any name if you are advanced user
 1. Edit .env file, change the following fiels based on your DBMS settings
    1. `DB_DATABASE=cv-automation`
