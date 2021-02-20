@@ -4,10 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header" style="text-align: center">Change password</div>
+            <div class="card shadow-custom">
+                <div class="card-header bg-custom-medium h4">
+                    <i class="fa fa-gears header-icon"></i> 
+                    Change password
+                </div>
 
-                <div class="panel-body">
+                <div class="card-body bg-custom-light">
                     @if (session('error'))
                         <div class="alert alert-danger">
                             {{ session('error') }}
