@@ -5,7 +5,11 @@
 <a href="#"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-### CV AUTOMATION SYSTEM (CAS)
+<h2 align="center">CV AUTOMATION SYSTEM (CAS)</h2>
+<p align="center">
+   <img src="public/images/cas-image.jpg">
+</p>
+
 -----------------
 
 ### INTRODUCTION:
